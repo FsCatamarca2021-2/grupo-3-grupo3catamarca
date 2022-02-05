@@ -1,7 +1,11 @@
 <div class="card col-md-6 contenedorSesion" style=" width: 25rem;">
     <!-- <img src="../assets/img/logoLogin.png" class="card-img-top" alt="..."> -->
     <div class="card-body">
+<<<<<<< HEAD
         <h5 class="card-title centrar-texto">Registrarme</h5>
+=======
+        <h5 class="card-title centrar-texto ">Regístrate</h5>
+>>>>>>> origin/RamaJavier
 
         <form>
             <div class="borde">
@@ -80,7 +84,14 @@
             </div>
 
             <div class="boton-registro">
-                <button type="submit" class="btn btn-primary">Registrarme</button>
+                <button (click)="ejecutar()" type="button" class="btn btn-primary" [disabled]="cargando">
+                        
+                    <i [ngClass]="{'fa-save' : !cargando, 'fa-refresh ffa-upload': cargando }" class="fa "></i>
+                     <span *ngIf="!cargando">Regístrarme</span>
+                     <span *ngIf="cargando">Espere por favor</span>
+                    </button>
+
+
             </div>
             <br>
 

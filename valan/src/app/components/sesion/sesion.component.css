@@ -1,31 +1,38 @@
-.login{
+.login {
     margin: 0 auto;
 }
-.color-boton{
+
+.color-boton {
     border: none;
     background-color: #15af0a;
     padding: 10px 40px;
 }
-.boton{
+
+.boton {
     text-align: center;
 }
-.link{
+
+.link {
     text-align: center;
     color: red;
 }
-.imgLogo{
-    margin-bottom: 50px ;
+
+.imgLogo {
+    margin-bottom: 50px;
 }
-.TituloSesion{
+
+.TituloSesion {
     text-align: center;
     margin-bottom: 20px;
 }
-.OlvContr{
+
+.OlvContr {
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
 }
-.BordeLogin{
+
+.BordeLogin {
     border: 2px solid #fff;
     border-radius: 15px;
     padding: 15px;

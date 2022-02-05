@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
+  cargando:boolean =false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ejecutar(){
+    this.cargando=true;
+    setTimeout(() => this.cargando =false, 3000 )
   }
 
 }
