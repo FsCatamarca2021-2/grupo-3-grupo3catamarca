@@ -6,6 +6,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { SomosComponent } from './components/somos/somos.component';
 import { AyudaComponent } from './components/ayuda/ayuda.component';
 import { MenuPrincipalComponent } from './components/menuPrincipal/menuPrincipal.component';
+import { ForoComponent } from './pages/foro/foro.component';
 
 
 
@@ -17,6 +18,7 @@ export const ROUTES: Routes= [
     {path:'somos',component: SomosComponent },
     {path:'menu',component: MenuPrincipalComponent  },
     {path:'ayuda',component: AyudaComponent },
+    {path:'foro',component: ForoComponent },
     {path:'', pathMatch: 'full', redirectTo:'home'},
     {path:'**', pathMatch: 'full', redirectTo:'home'},    
     

@@ -26,6 +26,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { SidenavListComponent } from './components/shared/sidenav-list/sidenav-list.component'
+import { PagesModule } from './pages/pages.module';
+
 
 
 @NgModule({
@@ -51,7 +53,8 @@ import { SidenavListComponent } from './components/shared/sidenav-list/sidenav-l
     MatTabsModule,
     MatIconModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    PagesModule
   ],
   exports: [
     MatSidenavModule,
