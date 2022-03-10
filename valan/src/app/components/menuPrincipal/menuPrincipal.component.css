@@ -1,3 +1,149 @@
-.menu {
-    margin: 0 auto;
+.Contenedor, .contenedor-cotizar {
+    width: 90%;
+    max-width:  900px;
+    margin: auto;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tabla {
+
+    width: 33%;
+    height: 550px;
+    margin: auto;
+    border: 1px solid #7209a3;
+    border-radius: 15px;
+    box-shadow: 0px 0px 4px 0px #7209a3;
+    padding: 60px;
+    text-align: center;
+    flex-grow: 1;
+    color: #000000;
+}
+
+.tabla>h2, .tabla-cotizar>h2 {
+
+    display: block;
+    font-size: 30px;
+    margin-bottom: 35px;
+
+}
+
+.tabla img, .tabla-cotizar img{
+    width: 64px;
+    margin-bottom: 12px;
+}
+
+
+.boton {
+
+    display: inline-block;
+    width: 150px;
+    padding: 15px;
+    background-color: #0dc588;
+    text-decoration: none;
+    color: #000000;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    margin: auto;
+
+}
+
+.tabla:hover, .tabla-cotizar:hover {
+
+    background-color:   #6b5077;
+    color: #f1f1f2;
+    transition: 0.1 all;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 970px) {
+
+    .tabla{
+        width: 70%;
+        padding: 20px;
+        }
+}
+
+h1{
+    color: #000000;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.contenedor-cotizar {
+    
+    width: auto;
+    max-width:  1800px;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.tabla-cotizar{
+
+    width: 20%;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    border: 1px solid #19a1ca;
+    border-radius: 40px;
+    box-shadow: 0px 0px 20px 0px #19a1ca;
+    padding: 50px;
+    text-align: center;
+    color: #000000;
+}
+
+h4{
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: 'Arial Narrow Bold';
+}
+
+.boton2 {
+    display: inline-block;
+    width: 150px;
+    padding: 12px;
+    background-color: #0dc588;
+    text-decoration: none;
+    color: #000000;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.tabla-cotizar:hover {
+
+    background-color:   #19a1ca;
+    color: #f1f1f2;
+    transition: 0.1 all;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+h3{
+    color: #000000;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+    margin-top: 38%;
+    margin-bottom: auto;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+p {
+    font-size: 13px;
+    margin-top: 15%;
+    text-transform: uppercase;
 }
