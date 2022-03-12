@@ -27,6 +27,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { SidenavListComponent } from './components/shared/sidenav-list/sidenav-list.component'
 import { PagesModule } from './pages/pages.module';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -39,7 +40,9 @@ import { PagesModule } from './pages/pages.module';
     SomosComponent,
     AyudaComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    FooterComponent
+
   ],
   imports: [
     BrowserModule,

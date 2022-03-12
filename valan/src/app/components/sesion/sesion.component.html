@@ -1,37 +1,43 @@
-<div class="login" style=" width: 22rem;">
-    <img src="../assets/img/logoLogin.png" class="card-img-top imgLogo" alt="...">
-    <div class="contenedorSesion">
-        <h5 class="card-title TituloSesion">Iniciar Sesión</h5>
+<div class="raios">
 
-        <form>
-            <div class="BordeLogin">
-                <div class="bor mb-3">
-                    <span class="icon" id="basic-addon1"><img src="../assets/img/loginUsuario.png" width="30" m  alt=""></span>
-                    <input type="text" class="form-control bor" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    <div class="login">
+        <img src="../assets/img/logoLogin.png" class="card-img-top imgLogo" alt="...">
+        <div class="contenedorSesion">
+            <h5 class="card-title TituloSesion ">Login</h5>
+    
+            <form>
+                <div class="BordeLogin">
+                    <div class="bor mb-3">
+                        <span class="icon" id="basic-addon1"><img src="../assets/img/loginUsuario.png" width="30" m  alt=""></span>
+                        <input type="text" class="form-control bor" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1" required maxlength="20" minlength="5">
+                    </div>
+                    <div class="bor mb-3">
+                        <span class="icon" id="basic-addon1"><img src="../assets/img/loginContraseña.png" width="30"  alt=""></span>
+                        <input type="password" class="form-control bor" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1" required minlength="8" >
+                    </div>
+    
                 </div>
-                <div class="bor mb-3">
-                    <span class="icon" id="basic-addon1"><img src="../assets/img/loginContraseña.png" width="30"  alt=""></span>
-                    <input type="password" class="form-control bor" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1">
+                <div class="mb-3 form-check OlvContr">
+    
+                    <div class="cont1">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Recordar mi Correo</label>
+                    </div>
+                    <div class="cont2">
+                        <a href="#" class="link">Olvidé mi contraseña</a>
+                    </div>
                 </div>
-
-            </div>
-            <div class="mb-3 form-check OlvContr">
-
-                <div class="cont1">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Recordar mi Correo</label>
+                <div class="boton">
+                    <button type="submit" class="btn btn-primary color-boton">Ingresar</button>
+                    <br>
                 </div>
-                <div class="cont2">
-                    <a href="#" class="link">Olvidé mi contraseña</a>
+                <div class="registro">
+                    <p>¿Aún no tienes cuenta? <a routerLink="registro" class="registrolink">Registrarme</a> </p>
                 </div>
-            </div>
-            <div class="boton">
-                <button type="submit" class="btn btn-primary color-boton">Entrar</button>
-                <br>
-            </div>
-
-
-        </form>
-
+    
+    
+            </form>
+    
+        </div>
     </div>
-</div>
+    </div>

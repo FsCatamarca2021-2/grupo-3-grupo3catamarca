@@ -1,11 +1,26 @@
 .login {
-    margin: 0 auto;
-}
+    left: 60%;
+    opacity: 85%;
+    width: 400px;
+    height: 500px;
+    vertical-align: middle;
+    position: absolute;
 
+}
+.raios{
+    background-image: url(../../../assets/img/FondoRegistro.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    width: 100%;
+    height: 45rem;
+    
+}
 .color-boton {
     border: none;
     background-color: #15af0a;
     padding: 10px 40px;
+    
 }
 
 .boton {
@@ -24,6 +39,8 @@
 .TituloSesion {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 30px;
+    font-family: 'Bebas Neue', cursive;
 }
 
 .OlvContr {
@@ -41,7 +58,21 @@
     margin-right: 10px;
 }
 .bor{
-    border-radius: 10px;
+    border-radius: 30px;
     display: flex;
     
+}
+input:invalid{
+    border-color: red;
+}  
+input:valid{
+    border-color: #72b2c4;
+} 
+
+.contenedorSesion{
+    vertical-align: auto;
+}
+.registro{
+    padding-top: 20px;
+    text-align: center;
 }
