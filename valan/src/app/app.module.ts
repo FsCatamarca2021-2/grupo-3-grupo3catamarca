@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {  RouterModule} from '@angular/router';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 // permite hacer peticiones http 
 import { HttpClientModule } from '@angular/common/http';
@@ -51,7 +51,8 @@ import { SidenavListComponent } from './components/shared/sidenav-list/sidenav-l
     MatTabsModule,
     MatIconModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    ReactiveFormsModule
   ],
   exports: [
     MatSidenavModule,
