@@ -26,6 +26,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { SidenavListComponent } from './components/shared/sidenav-list/sidenav-list.component'
+import { PagesModule } from './pages/pages.module';
+import { FooterComponent } from './components/footer/footer.component';
+
 
 
 @NgModule({
@@ -37,7 +40,9 @@ import { SidenavListComponent } from './components/shared/sidenav-list/sidenav-l
     SomosComponent,
     AyudaComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    FooterComponent
+
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,9 @@ import { SidenavListComponent } from './components/shared/sidenav-list/sidenav-l
     MatIconModule,
     MatButtonModule,
     MatListModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PagesModule
+
   ],
   exports: [
     MatSidenavModule,

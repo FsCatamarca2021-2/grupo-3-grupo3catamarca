@@ -103,8 +103,7 @@
         border-radius: 100%;
         width: 150px;
     }
-    
-    .hdYpro {
+    /* .hdYpro {
         display: flex;
         flex-flow: column wrap;
         -webkit-box-pack: justify;
@@ -127,7 +126,7 @@
             width: 50%;
             margin: 0px auto;
         }
-    }
+    } */
     
     .wrapper {
         display: flex;
@@ -163,8 +162,7 @@
         text-align: center;
         margin-top: 30px;
     }
-    
-    .iqrUHq {
+    /* .iqrUHq {
         position: absolute;
         top: 6vw;
         left: 6vw;
@@ -174,9 +172,8 @@
         z-index: -1;
         background: rgb(52, 51, 72);
         border-radius: 400px;
-    }
-    
-    .jKPYKI {
+    } */
+    /* .jKPYKI {
         margin: 0px 0px 1rem;
         font-size: 1.2rem;
         color: rgb(52, 51, 72);
@@ -192,23 +189,20 @@
             font-size: 1.7rem;
             text-align: left;
         }
-    }
-    
-    .hCDXlO {
+    } */
+    /* .hCDXlO {
         display: block;
         margin: 0px 0px 0.8rem;
         font-size: 0.6rem;
         letter-spacing: 1.18px;
         color: rgb(106, 117, 135);
-    }
-    
-    .jEObfa {
+    } */
+    /* .jEObfa {
         width: 300px;
         bottom: 40px;
         max-width: initial;
-    }
-    
-    .fpdENk {
+    } */
+    /* .fpdENk {
         width: 50%;
         margin: 0px auto;
     }
@@ -219,9 +213,8 @@
         letter-spacing: 1px;
         text-align: center;
         color: rgb(106, 117, 135);
-    }
-    
-    @media screen and (min-width: 992px) {
+    } */
+    /* @media screen and (min-width: 992px) {
         .cPEkng {
             font-size: 0.7rem;
             text-align: left;
@@ -235,13 +228,8 @@
         text-align: center;
         color: rgb(106, 117, 135);
     }
-    
-    .bnFaLw {
-        position: relative;
-        padding: 8.8rem 0px;
-    }
-    
-    .hsmPs {
+     */
+    /* .hsmPs {
         display: flex;
         flex-wrap: wrap;
         -webkit-box-pack: justify;
@@ -249,15 +237,21 @@
         max-width: 30rem;
         margin: 0px auto 6rem;
     }
-    
-    .gyCxwS {
+     */
+    /* .gyCxwS {
         width: 7rem;
         height: auto;
-    }
-    
-    .hdKmNU {
+    } */
+    /* .hdKmNU {
         width: 7rem;
         height: auto;
+    } */
+    /* html,
+    body {
+        height: 100%;
+    } */
+    /* body {
+        margin: 0;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
     }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+     */
