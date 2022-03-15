@@ -1,97 +1,58 @@
-<div class="card col-md-6 contenedorSesion" style=" width: 25rem;">
-    <!-- <img src="../assets/img/logoLogin.png" class="card-img-top" alt="..."> -->
-    <div class="card-body">
-        <h5 class="card-title centrar-texto">Registrarme</h5>
+<div class="contenedor">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h1>Registro</h1>
 
-        <form>
-            <div class="borde">
-                <div class="mb-3">
+            <label for="">Nombre</label>
+            <input type="text" class="form-control" formControlName="nombre">
 
-                    <input type="text" placeholder="Introduzca su nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            
 
-                </div>
-                <div class="mb-3">
+            <label for="">Apellido</label>
+            <input type="text" class="form-control" formControlName="apellido">
 
-                    <input type="password" placeholder="Introduzca su apellido" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3">
+            <label for="">DNI</label>
+            <input type="number" class="form-control" formControlName="dni">
 
-                    <input type="email" placeholder="Correo" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3">
+            <label for="">Direccion</label>
+            <input type="text" class="form-control" formControlName="direccion">
+            
+            <label for="">Numero de Casa</label>
+            <input type="number" class="form-control" formControlName="numeracion">
 
-
-                    <input type="number" placeholder="DNI" class="form-control">
-
-                </div>
-                <div class="mb-3">
-
-
-                    <input type="password" placeholder="Contraseña" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-                </div>
-                <div class="mb-3">
+            <label for="">Correo</label>
+            <input type="email" class="form-control" formControlName="correo">
+            
+            <label for="">Contraseña</label>
+            <input type="password" class="form-control" formControlName="contraseña">
 
 
-                    <input type="password" placeholder="Repetir contraseña" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-                </div>
-                <div class="mb-3">
-
-                    <select name="" id="" class="form-select">
-                        <option value disabled selected>Pais</option>
-                        <option value="1">Argentina</option>
-                        <option value="2">Chile</option>
-                        <option value="3">Venezuela</option>
-                        <option value="4">Uruguay</option>
-                        <option value="5">Paraguay</option>
-                    </select>
-
-                </div>
-                <div class="mb-3">
-
-                    <select name="" id="" class="form-select">
-                        <option value="" disabled selected>Provincia</option>
-                        <option value="1">Catamarca</option>
-                        <option value="2">La Rioja</option>
-                        <option value="3">Tucuman</option>
-                        <option value="4">Cordoba</option>
-                        <option value="5">Santiago del Estero</option>
-                    </select>
-
-                </div>
-                <div class="mb-3 input-group">
+            <label for="">Edad</label>
+            <input type="number" class="form-control" formControlName="edad">
 
 
-                    <span class="input-group-text color" id="basic-addon2">Fecha de Nac.</span>
-                    <input type="date" class="form-control color" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <label for="">Provincia</label>
+            <select name="" id="" class="form-control" formControlName="provincia">
+                <option value=""disabled selected>Seleccione</option>
+                <option value="1">Catamarca</option>
+                <option value="2">La Rioja</option>
+                <option value="3">Cordoba</option>
+                <option value="4">Tucuman</option>
+                <option value="5">Santiago del Estero</option>
+                <option value="6">Jujuy</option>
+            </select>
+           
+            <label for="">Genero</label>
+            <select name="" id="" class="form-control" formControlName="genero">
+                <option value="" disabled selected>Seleccione</option>
+                <option value="1">Hombre</option>
+                <option value="2">Mujer</option>
+                <option value="3">Otro</option>
+                <option value="4">Virginia</option>
+            </select>
 
-                </div>
-                <div class="mb-3">
-
-
-                    <select name="" id="" class="form-select">
-                        <option value="" disabled selected>Genero</option>
-                        <option value="1">Masculino</option>
-                        <option value="2">Femenino</option>
-                        <option value="3">Otro</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="boton-registro">
-                <button (click)="ejecutar()" type="button" class="btn btn-primary" [disabled]="cargando">
-                        
-                    <i [ngClass]="{'fa-save' : !cargando, 'fa-refresh ffa-upload': cargando }" class="fa "></i>
-                     <span *ngIf="!cargando">Regístrarme</span>
-                     <span *ngIf="cargando">Espere por favor</span>
-                    </button>
-
-
-            </div>
-            <br>
-
-        </form>
-
-    </div>
+            
+        <div class="boton">
+            <button class="btn btn-success boton-enviar" type="submit" [disabled]="!form.valid">Enviar</button>
+        </div>        
+    </form>
 </div>
