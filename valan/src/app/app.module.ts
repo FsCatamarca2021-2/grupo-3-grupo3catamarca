@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {  RouterModule} from '@angular/router';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 // permite hacer peticiones http 
 import { HttpClientModule } from '@angular/common/http';
@@ -44,7 +44,9 @@ import {  FormsModule} from '@angular/forms';
     SomosComponent,
     AyudaComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    FooterComponent
+
   ],
   imports: [
     BrowserModule,
