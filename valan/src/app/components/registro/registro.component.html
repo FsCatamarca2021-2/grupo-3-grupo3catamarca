@@ -2,36 +2,36 @@
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <h1>Registro</h1>
 
-            <label for="">Nombre</label>
-            <input type="text" class="form-control" formControlName="nombre">
-
-            
-
-            <label for="">Apellido</label>
-            <input type="text" class="form-control" formControlName="apellido">
-
-            <label for="">DNI</label>
-            <input type="number" class="form-control" formControlName="dni">
-
-            <label for="">Direccion</label>
-            <input type="text" class="form-control" formControlName="direccion">
-            
-            <label for="">Numero de Casa</label>
-            <input type="number" class="form-control" formControlName="numeracion">
-
-            <label for="">Correo</label>
-            <input type="email" class="form-control" formControlName="correo">
-            
-            <label for="">Contraseña</label>
-            <input type="password" class="form-control" formControlName="contraseña">
+        <label for="">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre">
 
 
-            <label for="">Edad</label>
-            <input type="number" class="form-control" formControlName="edad">
+
+        <label for="">Apellido</label>
+        <input type="text" class="form-control" formControlName="apellido">
+
+        <label for="">DNI</label>
+        <input type="number" class="form-control" formControlName="dni">
+
+        <label for="">Direccion</label>
+        <input type="text" class="form-control" formControlName="direccion">
+
+        <label for="">Numero de Casa</label>
+        <input type="number" class="form-control" formControlName="numeracion">
+
+        <label for="">Correo</label>
+        <input type="email" class="form-control" formControlName="correo">
+
+        <label for="">Contraseña</label>
+        <input type="password" class="form-control" formControlName="contraseña">
 
 
-            <label for="">Provincia</label>
-            <select name="" id="" class="form-control" formControlName="provincia">
+        <label for="">Edad</label>
+        <input type="number" class="form-control" formControlName="edad">
+
+
+        <label for="">Provincia</label>
+        <select name="" id="" class="form-control" formControlName="provincia">
                 <option value=""disabled selected>Seleccione</option>
                 <option value="1">Catamarca</option>
                 <option value="2">La Rioja</option>
@@ -40,9 +40,9 @@
                 <option value="5">Santiago del Estero</option>
                 <option value="6">Jujuy</option>
             </select>
-           
-            <label for="">Genero</label>
-            <select name="" id="" class="form-control" formControlName="genero">
+
+        <label for="">Genero</label>
+        <select name="" id="" class="form-control" formControlName="genero">
                 <option value="" disabled selected>Seleccione</option>
                 <option value="1">Hombre</option>
                 <option value="2">Mujer</option>
@@ -50,9 +50,9 @@
                 <option value="4">Virginia</option>
             </select>
 
-            
+
         <div class="boton">
             <button class="btn btn-success boton-enviar" type="submit" [disabled]="!form.valid">Enviar</button>
-        </div>        
+        </div>
     </form>
 </div>

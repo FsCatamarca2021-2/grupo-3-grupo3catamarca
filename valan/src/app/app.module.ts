@@ -29,6 +29,7 @@ import { SidenavListComponent } from './components/shared/sidenav-list/sidenav-l
 import { PagesModule } from './pages/pages.module';
 ///formularios
 import {  FormsModule} from '@angular/forms';
+import { FooterComponent} from  './components/footer/footer.component'
 
 
 
@@ -62,7 +63,8 @@ import {  FormsModule} from '@angular/forms';
     MatButtonModule,
     MatListModule,
     PagesModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
       
   ],
   exports: [

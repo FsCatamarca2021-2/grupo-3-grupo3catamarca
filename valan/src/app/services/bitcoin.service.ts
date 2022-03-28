@@ -52,7 +52,7 @@ private url = 'https://registro-e18eb-default-rtdb.firebaseio.com';
    }
   
    mostrarClientes (){
-    const verCli='https://localhost:7086/cliente/ObtenerClientes';
+    const verCli='https://registro-e18eb-default-rtdb.firebaseio.com/registros';
      
 
      
