@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+import { BitcoinService } from '../../services/bitcoin.service';
 //registro
 
 @Component({
@@ -8,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrosComponent implements OnInit {
 
-  constructor() { }
+  mostrarClien : any []=[];
+
+  constructor(private clientesServicio: BitcoinService) {
+   
+  }
 
   ngOnInit(): void {
+    this.clientesServicio.mostrarClientes()
+        .subscribe ( resp => {
+          console.log(resp);
+          
+          
+          
+        });
   }
 
 }
