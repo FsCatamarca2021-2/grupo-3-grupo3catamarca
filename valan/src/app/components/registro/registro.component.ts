@@ -50,4 +50,7 @@ export class RegistroComponent implements OnInit {
   get edad() {return this.form.get('edad');}
   get provincia() {return this.form.get('provincia');}
   get genero() {return this.form.get('genero');}
+
+  
 }
+
