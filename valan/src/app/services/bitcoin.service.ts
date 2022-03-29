@@ -2,7 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {map} from 'rxjs/operators';
 import { ForoModel } from '../models/foro.models';
-import { Respons } from '../models/clientes-response';
+import { keyframes } from '@angular/animations';
+import {Respons} from '../models/clientes-response'
 
 
 
@@ -11,8 +12,8 @@ import { Respons } from '../models/clientes-response';
   providedIn: 'root'
 })
 export class BitcoinService {
-private url = 'https://registro-e18eb-default-rtdb.firebaseio.com';
-
+  
+  private url = 'https://registro-e18eb-default-rtdb.firebaseio.com';
 
 
   constructor( private http: HttpClient) {
@@ -50,14 +51,37 @@ private url = 'https://registro-e18eb-default-rtdb.firebaseio.com';
     // delete registroTemp.id;
     return this.http.put(`${this.url}/registros/${foro.id}.json`, registroTemp);
    }
+  getComentario(){
+    return this.http.get(`${this.url}/registros.json`)
+                .pipe(
+                  map(this.crearArreglo)
+                );
+  }
+
+private crearArreglo (comentarioObj:object){
+  const comentario:ForoModel[] =[];
+  console.log(comentarioObj);
+  // if (comentarioObj === null) {return[];}
+  // Object.keys (comentarioObj).forEach(key =>{
+  //   const registro:ForoModel=comentarioObj[key];
+  // registro.id=key;
+  // comentario.push(registro);
+  // });
   
+  return comentario;
+}
+
    mostrarClientes (){
-    const verCli='https://registro-e18eb-default-rtdb.firebaseio.com/registros';
-     
+     this.http.get('https://localhost:7086/cliente/ObtenerClientes')
+    .pipe(map((data:any)=>{
+      console.log(data);
+      
+      
+    }));
 
      
-     return this.http.get<Respons>(verCli);
-
+    
+      
       }
    
 

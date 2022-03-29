@@ -14,16 +14,19 @@ export class RegistrosComponent implements OnInit {
 
   constructor(private clientesServicio: BitcoinService) {
    
+       
   }
 
-  ngOnInit(): void {
-    this.clientesServicio.mostrarClientes()
-        .subscribe ( resp => {
-          console.log(resp);
+  ngOnInit() {
+   
+    this.clientesServicio.mostrarClientes() //crear nuevo servicio
+        
+    // this.clientesServicio.getComentario()
+    //     .subscribe (resp=>{
+    //       console.log(resp);
           
-          
-          
-        });
+    //     });
+    }
   }
 
-}
+
