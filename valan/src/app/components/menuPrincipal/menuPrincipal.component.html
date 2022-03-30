@@ -1,58 +1,150 @@
+<div class="w-100">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="position-absolute top-0 end-0 translate-middle-y">
+		<button type="button" class="btn btn-outline-primary me-md-3 d-inline btn-md rounded-pill"> Ayuda </button>
+		
+		  <button class="btn btn-outline-primary d-inline dropdown-toggle btn-sm rounded-pill" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
+			  <img src="./assets/img/sinfoto.png" class="img-fluid rounded-circle avatar mr-2"> Usuario
+		  </button>
+	  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+			<li><a class="dropdown-item" href="#">Configuracion</a></li>
+		<li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
+	  </ul>
+		
+	</div>
+	</nav>
+</div>
 <body>
-	<div>
-		<!-- <div class="menu">	 -->
-			<div class="d-flex">
-				<div class="sidebar-conteiner">
-					<div class="logo">
-						<h4>Valan</h4>
-					</div>
-					<div class="menu">
-						<a herf="#" class="d-block text-dark p-3">Inicio</a>
-						<a herf="#" class="d-block text-dark p-3"><i class="fa-regular fa-circle-dollar"></i>Cuentas</a>
-						<a herf="#" class="d-block text-dark p-3"><i class="fa-regular fa-key"></i>Claves</a>
-						<a herf="#" class="d-block text-dark p-3"><i class="fa-regular fa-arrow-down-arrow-up"></i>Transferencias</a>
-						<a herf="#" class="d-block text-dark p-3">Pagos de Servicios</a>
-						<a herf="#" class="d-block text-dark p-3">Pagos de Sueldo</a>
-						<a herf="#" class="d-block text-dark p-3">Debitos Automaticos</a>
-						<a herf="#" class="d-block text-dark p-3">Compra y Venta de Dolares</a>
-						<a herf="#" class="d-block text-dark p-3">Tendencias de Inversiones</a>
-						<a herf="#" class="d-block text-dark p-3">Plazos Fijos</a>
-						<a herf="#" class="d-block text-dark p-3">Atencion Virtual</a>
-						<a herf="#" class="d-block text-dark p-3">Turnos Online</a>
-						<a herf="#" class="d-block text-dark p-3">Preguntas Frecuentes</a>
-						
-					</div>
-				</div>
-				<div class="w-100">
-	
-				<nav class="navbar navbar-light bg-light">
-					<div class="container-fluid">
-					  <form class="d-flex">
-						<input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-						<button class="btn btn-outline-success" type="submit"></button>
-					  </form>
-						<div class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						  Dropdown
-						</a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-						  <li><a class="dropdown-item" href="#">Action</a></li>
-						  <li><a class="dropdown-item" href="#">Another action</a></li>
-						  <li><hr class="dropdown-divider"></li>
-						  <li><a class="dropdown-item" href="#">Something else here</a></li>
-						</ul>
-					</div>
-					</div>
-				  </nav>
-				  
-				</div>
-			</div>
-			
+<div class="sidebar">
+	<div class="logo_content">
+			<i class="fa-light fa-bars" id="btn"></i>
+	</div>
+	<ul class="nav_list">
+		<ol>
+			<a href="#">
+				<i class="fa-solid fa-house"></i>
+				<span class="links_name">Inicio</span>
+			</a>
+			<span class="botonside">Inicio</span>
+		</ol>
+		
+		<hr>
+
+		<ol>
+			<a href="#">
+				<i class="fa-light fa-circle-dollar"></i>
+				<span class="links_name">Cuentas</span>
+			</a>
+			<span class="botonside">Cuentas</span>
+		</ol>
+		
+		<hr>
+		
+		<ol>
+			<a href="#">
+				<i class="fa-light fa-key"></i>
+				<span class="links_name">Claves</span>
+			</a>
+			<span class="botonside">Claves</span>
+		</ol>
+		
+		<hr>
+		
+		<ol>
+			<a href="#">
+				<i class="fa-light fa-arrow-down-arrow-up"></i>
+				<span class="links_name">Transferencias</span>
+			</a>
+			<span class="botonside">Transferencias</span>
+		</ol>
+		<ol>
+			<a href="#">
+				<i class="fa-light fa-coins"></i>
+				<span class="links_name">Pago de Servicios</span>
+			</a>
+			<span class="botonside">Pago de Servicios</span>
+		</ol>
+		<ol>
+			<a href="#">
+				<i class="fa-light fa-coins"></i>
+				<span class="links_name">Pago de Sueldo</span>
+			</a>
+			<span class="botonside">Pago de Sueldos</span>
+		</ol>
+		<ol>
+			<a href="#">
+				<i class="fa-light fa-credit-card-front"></i>
+				<span class="links_name">Debito AutomÁtico</span>
+			</a>
+			<span class="botonside">Debito Automatico</span>
+		</ol>
+		<ol>
+			<a href="#">
+				<i class="fa-light fa-hand-holding-dollar"></i>
+				<span class="links_name">Compra y Venta de Dolares</span>
+			</a>
+			<span class="botonside">Compra y Venta de Dolares</span>
+		</ol>
+		
+		<hr>
+		
+		<ol>
+			<a href="#">
+				<i class="fa-light fa-chart-mixed"></i>
+				<span class="links_name">Tendencia de Inversiones</span>
+			</a>
+			<span class="botonside">Tendencia de Inversiones</span>
+		</ol>
+		<ol>
+			<a href="#">
+				<i class="fa-light fa-piggy-bank"></i>
+				<span class="links_name">Plazo Fijo</span>
+			</a>
+			<span class="botonside">Plazo Fijo</span>
+		</ol>
+		
+		<hr>
+		
+		<ol>
+			<a href="#">
+				<i class="fa-light fa-comments-question"></i>
+				<span class="links_name">Atención Virtual</span>
+			</a>
+			<span class="botonside">Atención Virtual</span>
+		</ol>
+		<ol>
+			<a href="#">
+				<i class="fa-light fa-calendar-clock"></i>
+				<span class="links_name">Turnos Online</span>
+			</a>
+			<span class="botonside">Turnos Online</span>
+		</ol>
+		<ol>
+			<a href="#">
+				<i class="fa-light fa-file-circle-question"></i>
+				<span class="links_name">Preguntas Frecuentes</span>
+			</a>
+			<span class="botonside">Preguntas Frecuentes</span>
+		</ol>
+	</ul>
+</div>
+
+<script>
+	let btn = document.querySelector("#btn");
+	let sidebar= document.querySelector(".sidebar");
+
+	btn.onclick = function() {
+		sidebar.classList.toggle("active");
+	}
+	</script>
+
+</body>
+			<!-- <div class="menu">	 -->
 			<!-- <img src="../assets/img/carrito-de-compras.png" alt="" width="150" height="150">
 			<h5>¡Disfruta de los beneficios de Valan!</h5>
 			<h6>Compra y suma puntos</h6>
 			<img src="../assets/img/dinero-digital.png" alt="" width="150" height="150">
 		</div -->
-	</div>
-	</body>
+
+
 	
