@@ -35,3 +35,15 @@
         width: 300px;
     }
 }
+
+.alert-danger{
+    color: #721c24;
+    background: #f0b1b6;
+    border:1px solid white;
+    border-radius: 5px;
+    text-align: center;
+    margin: 5px;
+}
+.container-error-message{
+    padding: 3px;
+}

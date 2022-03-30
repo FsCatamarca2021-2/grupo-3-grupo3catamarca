@@ -2,53 +2,151 @@
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <h1>Registro</h1>
 
+
         <label for="">Nombre</label>
-        <input type="text" class="form-control" formControlName="nombre">
-
-
+        <input type="text" class="form-control"  formControlName="nombre">
+        <div *ngIf="form.get('nombre')?.errors && form.get('nombre')?.touched">
+            <p *ngIf="form.get('nombre')?.hasError('required')" class="text-danger">
+                Por favor ingrese su nombre
+            </p>
+            <p *ngIf="form.get('nombre')?.hasError('pattern')" class="text-danger">
+                No se permiten numeros ni caracteres especiales
+            </p>
+        </div>
 
         <label for="">Apellido</label>
         <input type="text" class="form-control" formControlName="apellido">
+        <div *ngIf="form.get('apellido')?.errors && form.get('apellido')?.touched">
+            <p *ngIf="form.get('apellido')?.hasError('required')" class="text-danger">
+                Por favor ingrese su apellido
+            </p>
+            <p *ngIf="form.get('apellido')?.hasError('pattern')" class="text-danger">
+                No se permiten numeros ni caracteres especiales
+            </p>
+        </div>
 
         <label for="">DNI</label>
         <input type="number" class="form-control" formControlName="dni">
+        <div *ngIf="form.get('dni')?.errors && form.get('dni')?.touched">
+            <p *ngIf="form.get('dni')?.hasError('required')" class="text-danger">
+                Por favor ingrese su DNI
+            </p>
+        </div>
+
+        <label for="">Fecha de Nacimiento</label>
+        <input type="date" class="form-control" formControlName="fechaNacimiento">
+        <div *ngIf="form.get('fechaNacimiento')?.errors && form.get('fechaNacimiento')?.touched">
+            <p *ngIf="form.get('fechaNacimiento')?.hasError('required')" class="text-danger">
+                Por favor ingrese su fecha de nacimiento
+            </p>
+        </div>
+
+        <label for="">Celular</label>
+        <input type="number" class="form-control" formControlName="celular">
+        <div *ngIf="form.get('celular')?.errors && form.get('celular')?.touched">
+            <p *ngIf="form.get('celular')?.hasError('required')" class="text-danger">
+                Por favor ingrese su celular
+            </p>
+        </div>
 
         <label for="">Direccion</label>
         <input type="text" class="form-control" formControlName="direccion">
+        <div *ngIf="form.get('direccion')?.errors && form.get('direccion')?.touched">
+            <p *ngIf="form.get('direccion')?.hasError('required')" class="text-danger">
+                Por favor ingrese su direccion
+            </p>
+        </div>
 
-        <label for="">Numero de Casa</label>
+        <label for="">Numeracion</label>
         <input type="number" class="form-control" formControlName="numeracion">
+        <div *ngIf="form.get('numeracion')?.errors && form.get('numeracion')?.touched">
+            <p *ngIf="form.get('numeracion')?.hasError('required')" class="text-danger">
+                Por favor ingrese la numeracion de su lugar de residencia
+            </p>
+        </div>
+
+        <label for="">Departamento</label>
+        <input type="text" class="form-control" formControlName="departamento">
+
+        <label for="">Piso</label>
+        <input type="text" class="form-control" formControlName="piso">
+
+        <label for="">Barrio</label>
+        <input type="text" class="form-control" formControlName="barrio">
+        <div *ngIf="form.get('barrio')?.errors && form.get('barrio')?.touched">
+            <p *ngIf="form.get('barrio')?.hasError('required')" class="text-danger">
+                Por favor ingrese su barrio
+            </p>
+        </div>
 
         <label for="">Correo</label>
         <input type="email" class="form-control" formControlName="correo">
+        <div *ngIf="form.get('correo')?.errors && form.get('correo')?.touched">
+            <p *ngIf="form.get('correo')?.hasError('required')" class="text-danger">
+                Por favor ingrese su correo
+            </p>
+
+            <p *ngIf="form.get('correo')?.hasError('email')" class="text-danger">
+                correo no valido
+            </p>
+        </div>
 
         <label for="">Contraseña</label>
         <input type="password" class="form-control" formControlName="contraseña">
+        <div *ngIf="form.get('contraseña')?.errors && form.get('contraseña')?.touched">
+            <p *ngIf="form.get('contraseña')?.hasError('required')" class="text-danger">
+                Por favor ingrese su contraseña
+            </p>
+            <p class="text-danger" *ngIf="form.get('contraseña')?.hasError('minlength')">
+                minimo de caracteres 8
+            </p>
+        </div>
 
 
         <label for="">Edad</label>
         <input type="number" class="form-control" formControlName="edad">
+        <div *ngIf="form.get('edad')?.errors && form.get('edad')?.touched">
+            <p *ngIf="form.get('edad')?.hasError('required')" class="text-danger">
+                Por favor ingrese su edad
+            </p>
+            <p class="text-danger" *ngIf="form.get('edad')?.hasError('min')">
+                Tienes que ser mayor de 18 años
+            </p>
+            <p class="text-danger" *ngIf="form.get('edad')?.hasError('max')">
+                Tienes que ser menor a 99 años
+            </p>
+
+        </div>
 
 
         <label for="">Provincia</label>
         <select name="" id="" class="form-control" formControlName="provincia">
-                <option value=""disabled selected>Seleccione</option>
-                <option value="1">Catamarca</option>
-                <option value="2">La Rioja</option>
-                <option value="3">Cordoba</option>
-                <option value="4">Tucuman</option>
-                <option value="5">Santiago del Estero</option>
-                <option value="6">Jujuy</option>
-            </select>
+            <option value="" disabled selected>Seleccione</option>
+            <option value="1">Catamarca</option>
+            <option value="2">La Rioja</option>
+            <option value="3">Cordoba</option>
+            <option value="4">Tucuman</option>
+            <option value="5">Santiago del Estero</option>
+            <option value="6">Jujuy</option>
+        </select>
+        <div *ngIf="form.get('provincia')?.errors && form.get('provincia')?.touched">
+            <p *ngIf="form.get('provincia')?.hasError('required')" class="text-danger">
+                Por favor ingrese su provincia
+            </p>
+        </div>
 
         <label for="">Genero</label>
         <select name="" id="" class="form-control" formControlName="genero">
-                <option value="" disabled selected>Seleccione</option>
-                <option value="1">Hombre</option>
-                <option value="2">Mujer</option>
-                <option value="3">Otro</option>
-                <option value="4">Virginia</option>
-            </select>
+            <option value="" disabled selected>Seleccione</option>
+            <option value="1">Hombre</option>
+            <option value="2">Mujer</option>
+            <option value="3">Otro</option>
+        </select>
+        <div *ngIf="form.get('genero')?.errors && form.get('genero')?.touched">
+            <p *ngIf="form.get('genero')?.hasError('required')" class="text-danger">
+                Por favor ingrese su genero
+            </p>
+        </div>
 
 
         <div class="boton">
