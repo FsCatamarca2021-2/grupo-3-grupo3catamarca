@@ -27,7 +27,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { SidenavListComponent } from './components/shared/sidenav-list/sidenav-list.component'
 import { PagesModule } from './pages/pages.module';
-import { FooterComponent } from './components/footer/footer.component';
+///formularios
+import {  FormsModule} from '@angular/forms';
+import { FooterComponent} from  './components/footer/footer.component'
+
+
+
 
 
 
@@ -57,9 +62,10 @@ import { FooterComponent } from './components/footer/footer.component';
     MatIconModule,
     MatButtonModule,
     MatListModule,
-    ReactiveFormsModule,
-    PagesModule
-
+    PagesModule,
+    FormsModule,
+    ReactiveFormsModule
+      
   ],
   exports: [
     MatSidenavModule,
