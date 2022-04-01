@@ -1,9 +1,7 @@
 {
-    "/api": {
-        "target": "https://localhost:7086",
+    "/cliente/*": {
+        "target": "http://localhost:5086",
         "secure": false,
-        "pathRewrite": {
-            "^/api": ""
-        }
+        "logLevel": "debug"
     }
 }

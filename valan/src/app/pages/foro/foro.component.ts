@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { ForoModel } from '../../models/foro.models';
+import { ForoModel } from 'src/app/models/foro.models';
 import { BitcoinService } from '../../services/bitcoin.service';
 import Swal from 'sweetalert2';
 import { Observable } from 'rxjs/internal/Observable';
@@ -15,7 +15,7 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class ForoComponent implements OnInit {
 
-  foro : ForoModel= new ForoModel();
+  foro = new ForoModel();
   constructor(private foroServices: BitcoinService) { }
 
   ngOnInit(): void {
@@ -37,12 +37,12 @@ export class ForoComponent implements OnInit {
     Swal.showLoading();
     let peticion:Observable<any>;
 
-    if (this.foro.id){
+    if (this.foro.idCliente){
      peticion= this.foroServices.actualizarComentario (this.foro); 
 
     }else{
 
-      peticion=      this.foroServices.crearComentario (this.foro);
+      peticion= this.foroServices.crearComentario (this.foro);
      
     }
       

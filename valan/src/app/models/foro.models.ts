@@ -1,12 +1,12 @@
 export class ForoModel{
-    id: string;
+    idCliente: string;
     nombre:string;
     comentario: string;
     conforme: boolean;
 
     constructor (){
         this.conforme=true;
-        this.id="";
+        this.idCliente="";
         this.nombre="";
         this.comentario="";
 
