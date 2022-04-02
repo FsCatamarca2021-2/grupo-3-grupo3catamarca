@@ -4,7 +4,7 @@
 
 
         <label for="">Nombre</label>
-        <input type="text" class="form-control"  formControlName="nombre">
+        <input type="text" class="form-control"  formControlName="nombre" autocomplete="off">
         <div *ngIf="form.get('nombre')?.errors && form.get('nombre')?.touched">
             <p *ngIf="form.get('nombre')?.hasError('required')" class="text-danger">
                 Por favor ingrese su nombre
@@ -31,15 +31,19 @@
             <p *ngIf="form.get('dni')?.hasError('required')" class="text-danger">
                 Por favor ingrese su DNI
             </p>
+            <p *ngIf="form.get('dni')?.hasError('pattern')" class="text-danger">
+                Documento no valido
+            </p>
         </div>
 
         <label for="">Fecha de Nacimiento</label>
-        <input type="date" class="form-control" formControlName="fechaNacimiento">
+        <input type="date" class="form-control" formControlName="fechaNacimiento"  min="1922-01-01" max="2003-12-31">
         <div *ngIf="form.get('fechaNacimiento')?.errors && form.get('fechaNacimiento')?.touched">
             <p *ngIf="form.get('fechaNacimiento')?.hasError('required')" class="text-danger">
                 Por favor ingrese su fecha de nacimiento
             </p>
         </div>
+        
 
         <label for="">Celular</label>
         <input type="number" class="form-control" formControlName="celular">
@@ -65,11 +69,11 @@
             </p>
         </div>
 
-        <label for="">Departamento</label>
+        <!-- <label for="">Departamento</label>
         <input type="text" class="form-control" formControlName="departamento">
 
         <label for="">Piso</label>
-        <input type="text" class="form-control" formControlName="piso">
+        <input type="text" class="form-control" formControlName="piso"> -->
 
         <label for="">Barrio</label>
         <input type="text" class="form-control" formControlName="barrio">
@@ -89,7 +93,13 @@
             <p *ngIf="form.get('correo')?.hasError('email')" class="text-danger">
                 correo no valido
             </p>
+            <p *ngIf="form.get('correo')?.hasError('pattern')" class="text-danger">
+                ingrese un dominio
+            </p>
         </div>
+    
+            
+ 
 
         <label for="">Contraseña</label>
         <input type="password" class="form-control" formControlName="contraseña">
@@ -97,28 +107,18 @@
             <p *ngIf="form.get('contraseña')?.hasError('required')" class="text-danger">
                 Por favor ingrese su contraseña
             </p>
-            <p class="text-danger" *ngIf="form.get('contraseña')?.hasError('minlength')">
-                minimo de caracteres 8
+            <p *ngIf="form.get('contraseña')?.hasError('minlength')" class="text-danger">
+                minimo de 8 caracteres 
+            </p>
+            <p *ngIf="form.get('contraseña')?.hasError('maxlength')"class="text-danger">
+                Maximo de 16 caracteres
+            </p>
+            <p *ngIf="form.get('contraseña')?.hasError('pattern')" class="text-danger">
+                Ingrese letras en minuscula, mayuscula y numeros
             </p>
         </div>
 
-
-        <label for="">Edad</label>
-        <input type="number" class="form-control" formControlName="edad">
-        <div *ngIf="form.get('edad')?.errors && form.get('edad')?.touched">
-            <p *ngIf="form.get('edad')?.hasError('required')" class="text-danger">
-                Por favor ingrese su edad
-            </p>
-            <p class="text-danger" *ngIf="form.get('edad')?.hasError('min')">
-                Tienes que ser mayor de 18 años
-            </p>
-            <p class="text-danger" *ngIf="form.get('edad')?.hasError('max')">
-                Tienes que ser menor a 99 años
-            </p>
-
-        </div>
-
-
+        
         <label for="">Provincia</label>
         <select name="" id="" class="form-control" formControlName="provincia">
             <option value="" disabled selected>Seleccione</option>
