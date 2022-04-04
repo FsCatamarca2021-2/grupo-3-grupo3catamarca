@@ -1,17 +1,17 @@
 export class ForoModel{
-    idCliente: string;
+    id: string;
     nombre:string;
-    comentario: string;
+    apellido: string;
     conforme: boolean;
 
     constructor (){
         this.conforme=true;
-        this.idCliente="";
+        this.id="";
         this.nombre="";
-        this.comentario="";
+        this.apellido="";
 
     }
 
 }
-//quedamos en el video 223 
+//quedamos en el video 219
 

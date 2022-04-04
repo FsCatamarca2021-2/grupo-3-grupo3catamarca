@@ -5,6 +5,8 @@ import { ForoModel } from 'src/app/models/foro.models';
 import { BitcoinService } from '../../services/bitcoin.service';
 import Swal from 'sweetalert2';
 import { Observable } from 'rxjs/internal/Observable';
+import { ClienteService } from '../../services/cliente.service';
+import { Respons } from 'src/app/models/clientes-response';
 
 
 
@@ -15,18 +17,30 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class ForoComponent implements OnInit {
 
-  foro = new ForoModel();
-  constructor(private foroServices: BitcoinService) { }
+  foro: ForoModel = new ForoModel();
+  // comen: Respons= new Respons();
+  conen : Respons = new Respons();
+  
+  constructor(private firebaseService: BitcoinService,
+              private comentarioService: ClienteService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit() { }
   guardar(form: NgForm){
-
+ 
+ 
+ 
+ 
     if (form.invalid){
       console.log('Formulario no válido');
       return;
       
     }
+    this.comentarioService.crearComentario(this.conen)
+        .subscribe (resp =>{
+          console.log(resp);
+          
+        });
+    
     Swal.fire({
       title:'Espere',
       text:'Guardando Información',
@@ -37,12 +51,12 @@ export class ForoComponent implements OnInit {
     Swal.showLoading();
     let peticion:Observable<any>;
 
-    if (this.foro.idCliente){
-     peticion= this.foroServices.actualizarComentario (this.foro); 
+    if (this.foro.id){
+     peticion= this.firebaseService.actualizarComentario (this.foro); 
 
     }else{
 
-      peticion= this.foroServices.crearComentario (this.foro);
+      peticion= this.firebaseService.crearComentario (this.foro);
      
     }
       

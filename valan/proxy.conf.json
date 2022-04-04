@@ -1,5 +1,5 @@
 {
-    "/cliente/*": {
+    "/cliente/": {
         "target": "http://localhost:5086",
         "secure": false,
         "logLevel": "debug"

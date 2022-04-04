@@ -16,7 +16,7 @@ import { BitcoinService } from '../../services/bitcoin.service';
 export class RegistrosComponent implements OnInit {
   
   comentarios: ForoModel []=[];
- 
+  firebase : any []=[];
 
   constructor(private comentarioService:BitcoinService,
                private clienteService:ClienteService) {
@@ -27,12 +27,16 @@ export class RegistrosComponent implements OnInit {
 
 
   ngOnInit() {
-   
+   //Funciona bien registro backen
+
+
     this.clienteService.getAll()
         .subscribe((res)=>{
           console.log('res',res);
           this.comentarios=res;
         });
+
+
 
     // this.clienteService.getCliente()
     //      .subscribe(resp=>{
@@ -44,12 +48,13 @@ export class RegistrosComponent implements OnInit {
     
     // servicio comentario
         
-    // this.comentarioService.getComentario()
-    //     .subscribe (resp=>{
-    //       console.log(resp);
-    //       this.comentarios=resp;
-          
-    //     });
+    this.comentarioService.getComentario()
+        .subscribe (resp=>{
+          console.log(resp);
+          this.firebase=resp;
+         
+        });
+        
     }
   }
 

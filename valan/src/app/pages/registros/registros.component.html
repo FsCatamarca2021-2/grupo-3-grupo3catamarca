@@ -21,8 +21,8 @@
     <tbody>
         <tr *ngFor="let comentario of comentarios; let i =index">
             <th scope="row">{{i+1}}</th>
+            <td>{{comentario.apellido}}</td>
             <td>{{comentario.nombre}}</td>
-            <td>{{comentario.idCliente}}</td>
             <td>{{comentario.conforme}}</td>
         </tr>
 

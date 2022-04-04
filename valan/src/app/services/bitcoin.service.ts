@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
 import { ForoModel } from 'src/app/models/foro.models';
 
@@ -12,7 +13,7 @@ import { ForoModel } from 'src/app/models/foro.models';
 export class BitcoinService {
   
   private url = 'https://registro-e18eb-default-rtdb.firebaseio.com';
-  private coment='http://localhost:5086/cliente';
+  private coment='http://localhost:5086';
 
 
   constructor( private http: HttpClient) {   }
@@ -30,11 +31,11 @@ export class BitcoinService {
   }
 
    crearComentario (foro: ForoModel){
-     return this.http.post(`${this.coment}/GuardarCliente`, foro)
+     return this.http.post(`${this.url}/registros.json `, foro)
      .pipe (
        map((resp: any)=>{
-         foro.idCliente = resp.name;
-         console.log();
+         foro.id = resp.name;
+         console.log(resp);
          
          return foro;
        })
@@ -47,8 +48,10 @@ export class BitcoinService {
     ...foro
     };
     // delete registroTemp.id;
-    return this.http.put(`${this.url}/registros/${foro.idCliente}.json`, registroTemp);
+    return this.http.put(`${this.url}/registros/${foro.id}.json`, registroTemp);
    }
+
+   
   getComentario(){
     return this.http.get(`${this.url}/registros.json`)
                 .pipe(
@@ -63,7 +66,7 @@ export class BitcoinService {
   
     // const registro: ForoModel = comentarioObj [key];
   
-    // registro.idCliente=key;
+    // registro.id=key;
     // comentarios.push(registro);
     // });
     
