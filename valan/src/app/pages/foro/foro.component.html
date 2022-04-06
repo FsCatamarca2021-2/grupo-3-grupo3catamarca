@@ -27,11 +27,11 @@
 
                 <div class="form-group">
                     <label>Comentario</label>
-                    <input type="text" [(ngModel)]="foro.comentario" class="form-control" name="comentario" placeholder="escriba un comentario">
+                    <input type="text" [(ngModel)]="foro.apellido" class="form-control" name="comentario" placeholder="escriba un comentario">
 
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>Estado</label>
                     <br>
                     <button *ngIf="foro.conforme" (click)="foro.conforme=false" class="btn btn-outline-success w-50" type="button">
@@ -46,12 +46,12 @@
 
                     <i class="fa fa-dizzy "></i>
                    No conforme
-                </button>
+                </button> -->
 
                 <hr>
                 <div class="form-group text-center">
                     <button type="submit" class="btn btn-primary w-25">
-                <i class="fa fa-save"></i>    
+                <i class="fa fa-save"></i>   
                 Guardar
                 </button>
                 </div>

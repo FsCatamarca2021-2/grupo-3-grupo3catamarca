@@ -1,31 +1,60 @@
 import { Component, OnInit } from '@angular/core';
+import { ForoModel } from 'src/app/models/foro.models';
 
+import { ClienteService } from 'src/app/services/cliente.service';
 import { BitcoinService } from '../../services/bitcoin.service';
+
+
 //registro
 
 @Component({
   selector: 'app-registros',
   templateUrl: './registros.component.html',
-  styleUrls: ['./registros.component.css']
+  styleUrls: ['./registros.component.css'],
+  providers: [ClienteService],
 })
 export class RegistrosComponent implements OnInit {
+  
+  comentarios: ForoModel []=[];
+  firebase : any []=[];
 
-  mostrarClien : any []=[];
-
-  constructor(private clientesServicio: BitcoinService) {
+  constructor(private comentarioService:BitcoinService,
+               private clienteService:ClienteService) {
+  
    
        
   }
 
+
   ngOnInit() {
-   
-    this.clientesServicio.mostrarClientes() //crear nuevo servicio
+   //Funciona bien registro backen
+
+
+    this.clienteService.getAll()
+        .subscribe((res)=>{
+          console.log('res',res);
+          this.comentarios=res;
+        });
+
+
+
+    // this.clienteService.getCliente()
+    //      .subscribe(resp=>{
+           
+    //        console.log(resp);
+           
+    //      });
+
+    
+    // servicio comentario
         
-    // this.clientesServicio.getComentario()
-    //     .subscribe (resp=>{
-    //       console.log(resp);
-          
-    //     });
+    this.comentarioService.getComentario()
+        .subscribe (resp=>{
+          console.log(resp);
+          this.firebase=resp;
+         
+        });
+        
     }
   }
 
