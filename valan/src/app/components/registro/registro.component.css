@@ -47,6 +47,15 @@
 .container-error-message{
     padding: 3px;
 }
+
+.password{
+    position: relative;
+}
+.password i{
+    position: absolute;
+    top: 2px;
+    left: 340px;
+}
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 

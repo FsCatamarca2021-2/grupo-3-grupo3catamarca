@@ -49,6 +49,6 @@ export class RegistroComponent implements OnInit {
   get provincia() {return this.form.get('provincia');}
   get genero() {return this.form.get('genero');}
 
-  
+  hide = true;
 }
 

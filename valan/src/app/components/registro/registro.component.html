@@ -100,9 +100,13 @@
     
             
  
-
         <label for="">Contraseña</label>
-        <input type="password" class="form-control" formControlName="contraseña">
+        <div class="password">
+            <input type="password" class="form-control" formControlName="contraseña" [type]="hide ? 'password':'text'">
+            <i class="material-icons" matSuffix (click)="hide = !hide">
+            {{hide ? 'visibility': 'visibility_off'}}
+        </i>
+        </div>
         <div *ngIf="form.get('contraseña')?.errors && form.get('contraseña')?.touched">
             <p *ngIf="form.get('contraseña')?.hasError('required')" class="text-danger">
                 Por favor ingrese su contraseña
