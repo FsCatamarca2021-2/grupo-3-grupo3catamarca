@@ -3,6 +3,7 @@ import { ForoModel } from 'src/app/models/foro.models';
 
 import { ClienteService } from 'src/app/services/cliente.service';
 import { BitcoinService } from '../../services/bitcoin.service';
+import { Respons } from '../../models/clientes-response';
 
 
 //registro
@@ -15,7 +16,7 @@ import { BitcoinService } from '../../services/bitcoin.service';
 })
 export class RegistrosComponent implements OnInit {
   
-  comentarios: ForoModel []=[];
+  comentarios: Respons []=[];
   firebase : any []=[];
 
   constructor(private comentarioService:BitcoinService,

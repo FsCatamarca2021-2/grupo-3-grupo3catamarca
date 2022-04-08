@@ -25,12 +25,12 @@ export class ForoComponent implements OnInit {
               private comentarioService: ClienteService) { }
 
   ngOnInit() { }
-  guardar(form: NgForm){
+  guardar(oCliente: NgForm){
  
  
  
  
-    if (form.invalid){
+    if (oCliente.invalid){
       console.log('Formulario no válido');
       return;
       
@@ -62,7 +62,7 @@ export class ForoComponent implements OnInit {
       
       peticion.subscribe (resp=>{
       Swal.fire({
-        title:this.foro.nombre,
+        title:this.foro.Nombre,
         text: 'Se actualizó correctamente',
         
       });
