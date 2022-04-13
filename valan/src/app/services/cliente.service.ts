@@ -10,7 +10,7 @@ import {map}  from 'rxjs/operators'
 })
 
 export class ClienteService {
-private url=''
+private url='http://localhost:5086'
   
   
 
@@ -27,12 +27,12 @@ private url=''
 
   //crear
 
-  crearComentario(oCliente:Respons){
-    return this.http.post('/cliente/guardarcliente',oCliente)
+  crearComentario(foro:Respons){
+    return this.http.post(`${this.url}/cliente/guardarcliente`,foro)
                 .pipe(
                   map ((resp:any)=>{
-                    oCliente.idCliente=resp.name;
-                    return oCliente;
+                    foro.id=resp.name;
+                    return foro;
 
                   })
                 );
@@ -49,7 +49,7 @@ private url=''
 
                     //Actualizar
   actualizarClientes(foro:Respons){
-    return this.http.put(`${this.url}/cliente/ModificarCliente/${foro.idCliente}`,foro);
+    return this.http.put(`${this.url}/cliente/ModificarCliente/${foro.id}`,foro);
 
   }
 
