@@ -20,7 +20,7 @@ export const ROUTES: Routes= [
     {path:'somos',component: SomosComponent },
     {path:'menu',component: MenuPrincipalComponent  },
     {path:'ayuda',component: AyudaComponent },
-    {path:'foro/:id',component: ForoComponent },
+    {path:'foro',component: ForoComponent },
     {path:'registros',component: RegistrosComponent },
     
 
