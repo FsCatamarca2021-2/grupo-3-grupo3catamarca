@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {  RouterModule} from '@angular/router';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 // permite hacer peticiones http 
 import { HttpClientModule } from '@angular/common/http';
@@ -27,6 +27,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { SidenavListComponent } from './components/shared/sidenav-list/sidenav-list.component'
 import { PagesModule } from './pages/pages.module';
+///formularios
+import {  FormsModule} from '@angular/forms';
+import { FooterComponent} from  './components/footer/footer.component'
+
+
+
 
 
 
@@ -39,7 +45,9 @@ import { PagesModule } from './pages/pages.module';
     SomosComponent,
     AyudaComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    FooterComponent
+
   ],
   imports: [
     BrowserModule,
@@ -54,7 +62,10 @@ import { PagesModule } from './pages/pages.module';
     MatIconModule,
     MatButtonModule,
     MatListModule,
-    PagesModule
+    PagesModule,
+    FormsModule,
+    ReactiveFormsModule
+      
   ],
   exports: [
     MatSidenavModule,
