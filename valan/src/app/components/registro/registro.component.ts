@@ -1,40 +1,99 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormBuilder } from '@angular/forms';
+import { Validators, FormBuilder, NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
+import { UsuarioModel } from '../../models/usuario.model';
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css'],
+  
 })
 export class RegistroComponent implements OnInit {
+usuario : UsuarioModel =new UsuarioModel;
 
-  form = this.formB.group({
-    nombre: ['', [Validators.required, Validators.maxLength(20),Validators.pattern('[a-zA-ZÀ-ÿ ]{2,20}')]],
-    apellido: ['', [Validators.required, Validators.pattern('[a-zA-ZÀ-ÿ ]{2,20}')]],
-    dni: ['', [Validators.required, Validators.pattern('[0-9]{6,8}'),Validators.maxLength(8)]],
-    fechaNacimiento: ['', Validators.required],
-    celular: ['', [Validators.required, Validators.pattern('[0-9]{9,12}')]],
-    direccion: ['', Validators.required],
-    numeracion: ['', Validators.required],
-    barrio:['', Validators.required],
-    correo: ['', [Validators.required, Validators.email, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$')]],
-    contraseña: ['', [Validators.required, Validators.minLength(8), Validators.pattern('^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,16}$'),Validators.maxLength(16)]],
-    contraseña2: ['', [Validators.required, Validators.minLength(8), Validators.pattern('^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,16}$'),Validators.maxLength(16)]],
-    provincia: ['', Validators.required],
-    genero: ['', Validators.required],
-   // departamento:[''],
-   // piso:[''],
-  })
+form = this.formB.group({
+  nombre: ['', [Validators.required, Validators.pattern('/^[1-9]\d{6,10}$/')]],
+  apellido: ['', [Validators.required, Validators.pattern('/^[1-9]\d{6,10}$/')]],
+  dni: ['', Validators.required],
+  fechaNacimiento: ['', Validators.required],
+  celular: ['', Validators.required],
+  direccion: ['', Validators.required],
+  numeracion: ['', Validators.required],
+  barrio:['', Validators.required],
+  correo: ['', [Validators.required, Validators.email]],
+  contraseña: ['', [Validators.required, Validators.minLength(8)]],
+  edad:['',[Validators.required,Validators.min(18), Validators.max(99)]],
+  provincia: ['', Validators.required],
+  genero: ['', Validators.required],
+  departamento:[''],
+  piso:[''],
+})
 
 
-  constructor(private formB: FormBuilder) {
+
+
+  constructor(private formB: FormBuilder,
+              private auth:AuthService,
+              private router:Router) {
   }
 
-  ngOnInit(): void {}
-  
-  RegistroNuevo(){
+  ngOnInit(): void {
+    
+    this.usuario=new UsuarioModel();
     
   }
+  //crear usuario
+  onSubmit(forms:NgForm){
+    if (forms.invalid){return;}
 
+    Swal.fire({
+      allowOutsideClick:false,
+      timer:2000,
+     
+      text:'Espere por favor...',
+      title:'la cuenta fué creada con éxito', 
+      
+    });
+    Swal.showLoading();
+    
+    this.router.navigateByUrl('/menu');
+  
+    this.auth.nuevoUsuario(this.usuario)
+        .subscribe (resp =>{
+          console.log(resp);
+          Swal.close();
+//pagina controler
+          this.router.navigateByUrl('/menu');
+        } ,(err)=>{
+          console.log(err.error);
+          Swal.fire({
+            title:'Atención!',
+            text:err.error.text
+            
+            
+          })
+        });
+
+       
+    // , (err)=>{
+//   Swal.fire({
+    
+//     allowOutsideClick:false,
+//     title:'Error al autenticar',
+    
+//   });
+// }
+    
+  }
+  // onSubmit(){
+  //   console.warn(this.form.value);
+  //   this.form.reset()
+  // }
+
+  
   get nombre() {return this.form.get('nombre');}
   get apellido() {return this.form.get('apellido');}
   get dni() {return this.form.get('dni');}
@@ -45,7 +104,7 @@ export class RegistroComponent implements OnInit {
   get barrio() {return this.form.get('barrio');}
   get correo() {return this.form.get('correo');}
   get contraseña() {return this.form.get('contraseña');}
-  get contraseña2() {return this.form.get('contraseña');}
+  get edad() {return this.form.get('edad');}
   get provincia() {return this.form.get('provincia');}
   get genero() {return this.form.get('genero');}
 

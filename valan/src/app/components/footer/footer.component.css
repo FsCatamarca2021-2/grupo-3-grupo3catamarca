@@ -1,7 +1,6 @@
 .contenedor-footer{
-    background-color: #1c224b;
-    opacity: 98%;
-    background-size: 100% ;
+    background-color: #72b2c4;
+    background-size: 100% 100%;
     overflow: hidden;
     margin-top: 30px;
 }
@@ -16,8 +15,4 @@
 }
 .redes{
         font-size: 1.2rem;
-        color: #00ffdd;
-}
-.foLink{
-    color: #00ffdd;
 }

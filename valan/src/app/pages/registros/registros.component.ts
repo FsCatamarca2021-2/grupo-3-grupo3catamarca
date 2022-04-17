@@ -18,6 +18,7 @@ export class RegistrosComponent implements OnInit {
   
   comentarios: Respons []=[];
   firebase : any []=[];
+  cargando =false;
 
   constructor(private comentarioService:BitcoinService,
                private clienteService:ClienteService) {
@@ -28,6 +29,7 @@ export class RegistrosComponent implements OnInit {
 
 
   ngOnInit() {
+    this.cargando=true;
    //Funciona bien registro backen
 
 
@@ -35,6 +37,7 @@ export class RegistrosComponent implements OnInit {
         .subscribe((res)=>{
           console.log('res',res);
           this.comentarios=res;
+          this.cargando=false;
         });
 
 

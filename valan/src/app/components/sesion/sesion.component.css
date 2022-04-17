@@ -1,4 +1,3 @@
-
 .login {
     margin: 0 auto;
     opacity: 98%;
@@ -7,16 +6,21 @@
   
     
 
+    left: 60%;
+    opacity: 85%;
+    width: 400px;
+    height: 500px;
+    vertical-align: middle;
+    position: absolute;
 }
-.raios{
+
+.raios {
     background-image: url(../../../assets/img/FondoRegistro.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: relative;
     width: 100%;
-    height: 900px;    
-    padding: 0;
-    margin: 0;
+    height: 45rem;
 }
 .boton{
     text-align: center;
@@ -42,7 +46,11 @@
   -o-transition: all .4s ease-in-out;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
-
+}
+.color-boton {
+    border: none;
+    background-color: #15af0a;
+    padding: 10px 40px;
 }
 .botonRe:hover {
 background-position: 100% 0;
@@ -64,6 +72,9 @@ background-position: 100% 0;
   );
   box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
 }
+.boton {
+    text-align: center;
+}
 
 .link {
     text-align: center;
@@ -79,7 +90,6 @@ background-position: 100% 0;
     margin-bottom: 20px;
     font-size: 30px;
     font-family: 'Bebas Neue', cursive;
-    color: #fff;
 }
 
 .OlvContr {
@@ -93,39 +103,29 @@ background-position: 100% 0;
     border-radius: 15px;
     padding: 15px;
 }
-.icolog{
-    font-size: 27px;
-    color: #fff;
-    margin-right: 8px;
-}
-.text{
-    color: #fff;
-}
-.bor{
-    border-radius: 30px;
-    display: flex;
-    
-}
-input.ng-invalid.ng-touched{
-    border: solid red;
-}  
-input.ng-valid{
-    border: solid green;
-} 
-.alert-danger{
-    color: #721c24;
-    background: #f0b1b6;
-    border:1px solid white;
-    border-radius: 5px;
-    text-align: center;
-    margin: 5px;
+
+.icon {
+    margin-right: 10px;
 }
 
-.contenedorSesion{
-    vertical-align: auto;
-  
+.bor {
+    border-radius: 30px;
+    display: flex;
 }
-.registro{
+
+input:invalid {
+    border-color: red;
+}
+
+input:valid {
+    border-color: #72b2c4;
+}
+
+.contenedorSesion {
+    vertical-align: auto;
+}
+
+.registro {
     padding-top: 20px;
     text-align: center;
 }

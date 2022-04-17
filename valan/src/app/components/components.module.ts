@@ -13,6 +13,7 @@ import { TransferenciasComponent } from './transferencias/transferencias.compone
     InversionesComponent,
     PagodeServiciosComponent,
     TransferenciasComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule

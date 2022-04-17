@@ -27,8 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     PortadaComponent,
     Portada2Component,
     Portada3Component,
-    RegistroComponent,
-    RegistrosComponent
+    RegistroComponent
+    
   ],
   exports:[
     ForoComponent,
@@ -40,7 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     RouterModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
     
     
     

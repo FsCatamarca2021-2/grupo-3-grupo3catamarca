@@ -14,6 +14,7 @@ import { PagodeServiciosComponent } from './components/pagode-servicios/pagode-s
 
 
 
+
 export const ROUTES: Routes= [
 
     { path:'home', component: HomeComponent },
@@ -22,7 +23,7 @@ export const ROUTES: Routes= [
     {path:'somos',component: SomosComponent },
     {path:'menu',component: MenuPrincipalComponent  },
     {path:'ayuda',component: AyudaComponent },
-    {path:'foro',component: ForoComponent },
+    {path:'foro/:id',component: ForoComponent },
     {path:'registros',component: RegistrosComponent },
     {path: 'transferencias', component: TransferenciasComponent},
     {path: 'inversiones', component: InversionesComponent},

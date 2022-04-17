@@ -1,10 +1,10 @@
-<div class="contenedor">
-    <form [formGroup]="form" (ngSubmit)="RegistroNuevo()">
+<!-- <div class="contenedor fast fadeIn animated">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <h1>Registro</h1>
 
 
         <label for="">Nombre</label>
-        <input type="text" class="form-control"  formControlName="nombre" autocomplete="off">
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="usuario.nombre" formControlName="nombre">
         <div *ngIf="form.get('nombre')?.errors && form.get('nombre')?.touched">
             <p *ngIf="form.get('nombre')?.hasError('required')" class="text-danger">
                 Por favor ingrese su nombre
@@ -31,19 +31,15 @@
             <p *ngIf="form.get('dni')?.hasError('required')" class="text-danger">
                 Por favor ingrese su DNI
             </p>
-            <p *ngIf="form.get('dni')?.hasError('pattern')" class="text-danger">
-                Documento no valido
-            </p>
         </div>
 
         <label for="">Fecha de Nacimiento</label>
-        <input type="date" class="form-control" formControlName="fechaNacimiento"  min="1922-01-01" max="2003-12-31">
+        <input type="date" class="form-control" formControlName="fechaNacimiento">
         <div *ngIf="form.get('fechaNacimiento')?.errors && form.get('fechaNacimiento')?.touched">
             <p *ngIf="form.get('fechaNacimiento')?.hasError('required')" class="text-danger">
                 Por favor ingrese su fecha de nacimiento
             </p>
         </div>
-        
 
         <label for="">Celular</label>
         <input type="number" class="form-control" formControlName="celular">
@@ -69,11 +65,11 @@
             </p>
         </div>
 
-        <!-- <label for="">Departamento</label>
+        <label for="">Departamento</label>
         <input type="text" class="form-control" formControlName="departamento">
 
         <label for="">Piso</label>
-        <input type="text" class="form-control" formControlName="piso"> -->
+        <input type="text" class="form-control" formControlName="piso">
 
         <label for="">Barrio</label>
         <input type="text" class="form-control" formControlName="barrio">
@@ -84,7 +80,7 @@
         </div>
 
         <label for="">Correo</label>
-        <input type="email" class="form-control" formControlName="correo">
+        <input type="email" name="email" required email [(ngModel)]="usuario.email" class="form-control" formControlName="correo">
         <div *ngIf="form.get('correo')?.errors && form.get('correo')?.touched">
             <p *ngIf="form.get('correo')?.hasError('required')" class="text-danger">
                 Por favor ingrese su correo
@@ -93,58 +89,37 @@
             <p *ngIf="form.get('correo')?.hasError('email')" class="text-danger">
                 correo no valido
             </p>
-            <p *ngIf="form.get('correo')?.hasError('pattern')" class="text-danger">
-                ingrese un dominio
-            </p>
         </div>
-    
-            
- 
+
         <label for="">Contraseña</label>
-        <div class="password">
-            <input type="password" class="form-control" formControlName="contraseña" [type]="hide ? 'password':'text'">
-            <i class="material-icons" matSuffix (click)="hide = !hide">
-            {{hide ? 'visibility': 'visibility_off'}}
-        </i>
-        </div>
+
+        <input type="password" required minlength="6" name="password" [(ngModel)]="usuario.password" class="form-control" formControlName="contraseña">
         <div *ngIf="form.get('contraseña')?.errors && form.get('contraseña')?.touched">
             <p *ngIf="form.get('contraseña')?.hasError('required')" class="text-danger">
                 Por favor ingrese su contraseña
             </p>
-            <p *ngIf="form.get('contraseña')?.hasError('minlength')" class="text-danger">
-                minimo de 8 caracteres 
-            </p>
-            <p *ngIf="form.get('contraseña')?.hasError('maxlength')"class="text-danger">
-                Maximo de 16 caracteres
-            </p>
-            <p *ngIf="form.get('contraseña')?.hasError('pattern')" class="text-danger">
-                Ingrese letras en minuscula, mayuscula y numeros
+            <p class="text-danger" *ngIf="form.get('contraseña')?.hasError('minlength')">
+                minimo de caracteres 8
             </p>
         </div>
 
-        <label for="">Repita su contraseña</label>
-        <div class="password">
-            <input type="password" class="form-control" formControlName="contraseña2" [type]="hide ? 'password':'text'">
-            <i class="material-icons" matSuffix (click)="hide = !hide">
-            {{hide ? 'visibility': 'visibility_off'}}
-        </i>
-        </div>
-        <div *ngIf="form.get('contraseña')?.errors && form.get('contraseña')?.touched">
-            <p *ngIf="form.get('contraseña')?.hasError('required')" class="text-danger">
-                Por favor ingrese su contraseña
+
+        <label for="">Edad</label>
+        <input type="number" class="form-control" formControlName="edad">
+        <div *ngIf="form.get('edad')?.errors && form.get('edad')?.touched">
+            <p *ngIf="form.get('edad')?.hasError('required')" class="text-danger">
+                Por favor ingrese su edad
             </p>
-            <p *ngIf="form.get('contraseña')?.hasError('minlength')" class="text-danger">
-                minimo de 8 caracteres 
+            <p class="text-danger" *ngIf="form.get('edad')?.hasError('min')">
+                Tienes que ser mayor de 18 años
             </p>
-            <p *ngIf="form.get('contraseña')?.hasError('maxlength')"class="text-danger">
-                Maximo de 16 caracteres
+            <p class="text-danger" *ngIf="form.get('edad')?.hasError('max')">
+                Tienes que ser menor a 99 años
             </p>
-            <p *ngIf="form.get('contraseña')?.hasError('pattern')" class="text-danger">
-                Ingrese letras en minuscula, mayuscula y numeros
-            </p>
+
         </div>
 
-        
+
         <label for="">Provincia</label>
         <select name="" id="" class="form-control" formControlName="provincia">
             <option value="" disabled selected>Seleccione</option>
@@ -176,7 +151,64 @@
 
 
         <div class="boton">
-            <button class="btn btn-success boton-enviar" type="submit" [disabled]="!form.valid">Enviar</button>
+            <button class="btn btn-success boton-enviar" type="submit">Enviar</button>
         </div>
     </form>
+</div>
+ -->
+
+
+<div class="limiter fadeInRight animated">
+    <div class="container-login100">
+        <div class="wrap-login100 p-t-50 p-b-90">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="login100-form validate-form flex-sb flex-w">
+
+                <span class="login100-form-title p-b-51">
+                    Crear nueva cuenta
+                </span>
+
+                <span *ngIf="f.submitted && f.controls['email'].errors" class="text-danger animated fadeIn">El correo es obligatorio</span>
+                <div class="wrap-input100 m-b-16">
+                    <input class="input100" type="email" name="email" required email [(ngModel)]="usuario.email" placeholder="Email">
+
+                    <span class="focus-input100"></span>
+                </div>
+
+                <span *ngIf="f.submitted && f.controls['nombre'].errors" class="text-danger animated fadeIn">El nombre es obligatorio</span>
+                <div class="wrap-input100 m-b-16">
+                    <input class="input100" type="text" required minlength="2" name="nombre" [(ngModel)]="usuario.nombre" placeholder="Nombre y apellidos">
+
+                    <span class="focus-input100"></span>
+                </div>
+
+                <span *ngIf="f.submitted && f.controls['password'].errors" class="text-danger animated fadeIn">al menos 6 caracteres</span>
+                <div class="wrap-input100 m-b-16">
+                    <input class="input100" type="password" required minlength="6" name="password" [(ngModel)]="usuario.password" placeholder="Password">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="flex-sb-m w-full p-t-3 p-b-24">
+                    <div class="contact100-form-checkbox">
+                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                        <label class="label-checkbox100" for="ckb1">
+                            Recordar mi usuario
+                        </label>
+                    </div>
+
+                    <div>
+                        <a routerLink="/sesion" class="txt1">
+                            ¿Ya tienes cuenta? / Ingresar
+                        </a>
+                    </div>
+                </div>
+
+                <div class="container-login100-form-btn m-t-17">
+                    <button class="login100-form-btn" type="submit">
+                        Crear cuenta
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
 </div>
