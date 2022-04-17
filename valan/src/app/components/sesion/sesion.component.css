@@ -1,11 +1,10 @@
 
 .login {
-    left: 60%;
+    margin: 0 auto;
     opacity: 98%;
     width: 400px;
     height: 500px;
-    vertical-align: middle;
-    position: absolute;
+  
     
 
 }
@@ -39,7 +38,7 @@
     border: none;
   background-size: 300% 100%;
   border-radius: 50px;
-  moz-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
@@ -47,7 +46,7 @@
 }
 .botonRe:hover {
 background-position: 100% 0;
-  moz-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
@@ -132,4 +131,25 @@ input.ng-valid{
 }
 .registrolink{
     color: #00ffdd;
+}
+
+
+
+
+@media screen and (min-width: 1040px) {
+    .login{ 
+        left: 60%;
+        vertical-align: middle;
+        position: absolute;
+    
+    }
+}
+@media screen and (max-width: 400px) {
+    .login{
+        width: 300px;
+
+    }
+    .raios{
+        background-image: none;
+    }    
 }

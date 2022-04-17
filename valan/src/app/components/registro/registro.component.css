@@ -8,8 +8,9 @@
     border: none;
     border-radius: 15px;
     padding: 15px;
-    background-color: #72b2c4;
+    background-color: #1c224b;
     margin: 0 auto;
+    opacity: 95%;
 }
 .contenedor label{
     font-size: 1rem;

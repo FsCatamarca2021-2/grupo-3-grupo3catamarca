@@ -50,5 +50,7 @@ export class RegistroComponent implements OnInit {
   get genero() {return this.form.get('genero');}
 
   hide = true;
+
+  
 }
 
