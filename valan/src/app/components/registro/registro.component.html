@@ -1,5 +1,5 @@
 <div class="contenedor">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form [formGroup]="form" (ngSubmit)="RegistroNuevo()">
         <h1>Registro</h1>
 
 
@@ -103,6 +103,28 @@
         <label for="">Contraseña</label>
         <div class="password">
             <input type="password" class="form-control" formControlName="contraseña" [type]="hide ? 'password':'text'">
+            <i class="material-icons" matSuffix (click)="hide = !hide">
+            {{hide ? 'visibility': 'visibility_off'}}
+        </i>
+        </div>
+        <div *ngIf="form.get('contraseña')?.errors && form.get('contraseña')?.touched">
+            <p *ngIf="form.get('contraseña')?.hasError('required')" class="text-danger">
+                Por favor ingrese su contraseña
+            </p>
+            <p *ngIf="form.get('contraseña')?.hasError('minlength')" class="text-danger">
+                minimo de 8 caracteres 
+            </p>
+            <p *ngIf="form.get('contraseña')?.hasError('maxlength')"class="text-danger">
+                Maximo de 16 caracteres
+            </p>
+            <p *ngIf="form.get('contraseña')?.hasError('pattern')" class="text-danger">
+                Ingrese letras en minuscula, mayuscula y numeros
+            </p>
+        </div>
+
+        <label for="">Repita su contraseña</label>
+        <div class="password">
+            <input type="password" class="form-control" formControlName="contraseña2" [type]="hide ? 'password':'text'">
             <i class="material-icons" matSuffix (click)="hide = !hide">
             {{hide ? 'visibility': 'visibility_off'}}
         </i>
