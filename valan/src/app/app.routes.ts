@@ -8,7 +8,6 @@ import { AyudaComponent } from './components/ayuda/ayuda.component';
 import { MenuPrincipalComponent } from './components/menuPrincipal/menuPrincipal.component';
 import { ForoComponent } from './pages/foro/foro.component';
 import { RegistrosComponent } from './pages/registros/registros.component';
-import { TransferenciasComponent } from './components/transferencias/transferencias.component';
 
 
 
@@ -21,9 +20,8 @@ export const ROUTES: Routes= [
     {path:'somos',component: SomosComponent },
     {path:'menu',component: MenuPrincipalComponent  },
     {path:'ayuda',component: AyudaComponent },
-    {path:'foro',component: ForoComponent },
+    {path:'foro/:id',component: ForoComponent },
     {path:'registros',component: RegistrosComponent },
-    {path: 'transferencias', component: TransferenciasComponent},
     
 
     {path:'', pathMatch: 'full', redirectTo:'home'},

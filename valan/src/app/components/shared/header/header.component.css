@@ -3,7 +3,7 @@ a{
     color: white;
 }
 a:hover,a:active{
-    color: #00ffdd;
+    color: #888;
     
 }
 .navigation-items{
@@ -12,8 +12,7 @@ a:hover,a:active{
     margin: 0;
 }
 mat-toolbar{
-    opacity: 98%;
-    background-color: #1c224b;
+    background-color: #72b2c4;
 }
 mat-icon{
     color: #fff;

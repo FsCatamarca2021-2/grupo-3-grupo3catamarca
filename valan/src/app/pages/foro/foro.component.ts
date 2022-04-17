@@ -10,6 +10,7 @@ import { Respons } from 'src/app/models/clientes-response';
 
 
 
+
 @Component({
   selector: 'app-foro',
   templateUrl: './foro.component.html',
@@ -20,6 +21,7 @@ export class ForoComponent implements OnInit {
   foro: ForoModel = new ForoModel();
   // comen: Respons= new Respons();
   conen : Respons = new Respons();
+  Router: any;
   
   constructor(private firebaseService: BitcoinService,
               private comentarioService: ClienteService) { }
@@ -37,7 +39,7 @@ export class ForoComponent implements OnInit {
     }
     this.comentarioService.crearComentario(this.conen)
         .subscribe (resp =>{
-          console.log(resp);
+          return resp;
           
         });
     
@@ -49,10 +51,13 @@ export class ForoComponent implements OnInit {
       
     });
     Swal.showLoading();
+    Swal.close();
+    
+   
     let peticion:Observable<any>;
 
-    if (this.foro.id){
-     peticion= this.firebaseService.actualizarComentario (this.foro); 
+    if (this.conen.idCliente){
+     peticion= this.comentarioService.crearComentario (this.conen); 
 
     }else{
 
@@ -63,9 +68,12 @@ export class ForoComponent implements OnInit {
       peticion.subscribe (resp=>{
       Swal.fire({
         title:this.foro.Nombre,
-        text: 'Se actualizó correctamente',
+        text: 'Se envió correctamente',
+        
+        
         
       });
+     
     });
       
   }

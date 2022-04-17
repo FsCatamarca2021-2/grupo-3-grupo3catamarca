@@ -1,11 +1,11 @@
 export class Respons {
-    idCliente:number;
+    idCliente:string;
     apellido:string;
     nombre:string;
 
 
     constructor() {
-        this.idCliente=0;
+        this.idCliente="";
         this.apellido="";
         this.nombre="";
         
