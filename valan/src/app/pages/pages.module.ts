@@ -6,6 +6,18 @@ import { Portada2Component } from './portada2/portada2.component';
 import { Portada3Component } from './portada3/portada3.component';
 import { RegistroComponent } from './registro/registro.component';
 import { RegistrosComponent } from './registros/registros.component';
+import { RouterModule } from '@angular/router';
+//formulario
+import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
+
+
+
+
+
 
 
 
@@ -25,7 +37,13 @@ import { RegistrosComponent } from './registros/registros.component';
     Portada3Component
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    HttpClientModule
+    
+    
+    
   ]
 })
 export class PagesModule { }

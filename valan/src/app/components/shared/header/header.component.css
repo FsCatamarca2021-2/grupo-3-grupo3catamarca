@@ -3,10 +3,18 @@ a{
     color: white;
 }
 a:hover,a:active{
-    color: lightgray;
+    color: #00ffdd;
+    
 }
 .navigation-items{
     list-style-type: none;
     padding: 0;
     margin: 0;
+}
+mat-toolbar{
+    opacity: 98%;
+    background-color: #1c224b;
+}
+mat-icon{
+    color: #fff;
 }
