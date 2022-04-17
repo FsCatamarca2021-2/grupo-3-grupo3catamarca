@@ -1,88 +1,182 @@
-<div class="card col-md-6 contenedorSesion" style=" width: 25rem;">
-    <!-- <img src="../assets/img/logoLogin.png" class="card-img-top" alt="..."> -->
-    <div class="card-body">
-        <h5 class="card-title centrar-texto">Regístrate</h5>
-
-        <form>
-            <div class="mb-3">
-
-                <input type="text" placeholder="Introduzca su nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-            </div>
-            <div class="mb-3">
-
-                <input type="password" placeholder="Introduzca su apellido" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3">
-
-                <input type="email" placeholder="Correo" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3">
+<div class="contenedor">
+    <form [formGroup]="form" (ngSubmit)="RegistroNuevo()">
+        <h1>Registro</h1>
 
 
-                <input type="number" placeholder="DNI" class="form-control">
+        <label for="">Nombre</label>
+        <input type="text" class="form-control"  formControlName="nombre" autocomplete="off">
+        <div *ngIf="form.get('nombre')?.errors && form.get('nombre')?.touched">
+            <p *ngIf="form.get('nombre')?.hasError('required')" class="text-danger">
+                Por favor ingrese su nombre
+            </p>
+            <p *ngIf="form.get('nombre')?.hasError('pattern')" class="text-danger">
+                No se permiten numeros ni caracteres especiales
+            </p>
+        </div>
 
-            </div>
-            <div class="mb-3">
+        <label for="">Apellido</label>
+        <input type="text" class="form-control" formControlName="apellido">
+        <div *ngIf="form.get('apellido')?.errors && form.get('apellido')?.touched">
+            <p *ngIf="form.get('apellido')?.hasError('required')" class="text-danger">
+                Por favor ingrese su apellido
+            </p>
+            <p *ngIf="form.get('apellido')?.hasError('pattern')" class="text-danger">
+                No se permiten numeros ni caracteres especiales
+            </p>
+        </div>
+
+        <label for="">DNI</label>
+        <input type="number" class="form-control" formControlName="dni">
+        <div *ngIf="form.get('dni')?.errors && form.get('dni')?.touched">
+            <p *ngIf="form.get('dni')?.hasError('required')" class="text-danger">
+                Por favor ingrese su DNI
+            </p>
+            <p *ngIf="form.get('dni')?.hasError('pattern')" class="text-danger">
+                Documento no valido
+            </p>
+        </div>
+
+        <label for="">Fecha de Nacimiento</label>
+        <input type="date" class="form-control" formControlName="fechaNacimiento"  min="1922-01-01" max="2003-12-31">
+        <div *ngIf="form.get('fechaNacimiento')?.errors && form.get('fechaNacimiento')?.touched">
+            <p *ngIf="form.get('fechaNacimiento')?.hasError('required')" class="text-danger">
+                Por favor ingrese su fecha de nacimiento
+            </p>
+        </div>
+        
+
+        <label for="">Celular</label>
+        <input type="number" class="form-control" formControlName="celular">
+        <div *ngIf="form.get('celular')?.errors && form.get('celular')?.touched">
+            <p *ngIf="form.get('celular')?.hasError('required')" class="text-danger">
+                Por favor ingrese su celular
+            </p>
+        </div>
+
+        <label for="">Direccion</label>
+        <input type="text" class="form-control" formControlName="direccion">
+        <div *ngIf="form.get('direccion')?.errors && form.get('direccion')?.touched">
+            <p *ngIf="form.get('direccion')?.hasError('required')" class="text-danger">
+                Por favor ingrese su direccion
+            </p>
+        </div>
+
+        <label for="">Numeracion</label>
+        <input type="number" class="form-control" formControlName="numeracion">
+        <div *ngIf="form.get('numeracion')?.errors && form.get('numeracion')?.touched">
+            <p *ngIf="form.get('numeracion')?.hasError('required')" class="text-danger">
+                Por favor ingrese la numeracion de su lugar de residencia
+            </p>
+        </div>
+
+        <!-- <label for="">Departamento</label>
+        <input type="text" class="form-control" formControlName="departamento">
+
+        <label for="">Piso</label>
+        <input type="text" class="form-control" formControlName="piso"> -->
+
+        <label for="">Barrio</label>
+        <input type="text" class="form-control" formControlName="barrio">
+        <div *ngIf="form.get('barrio')?.errors && form.get('barrio')?.touched">
+            <p *ngIf="form.get('barrio')?.hasError('required')" class="text-danger">
+                Por favor ingrese su barrio
+            </p>
+        </div>
+
+        <label for="">Correo</label>
+        <input type="email" class="form-control" formControlName="correo">
+        <div *ngIf="form.get('correo')?.errors && form.get('correo')?.touched">
+            <p *ngIf="form.get('correo')?.hasError('required')" class="text-danger">
+                Por favor ingrese su correo
+            </p>
+
+            <p *ngIf="form.get('correo')?.hasError('email')" class="text-danger">
+                correo no valido
+            </p>
+            <p *ngIf="form.get('correo')?.hasError('pattern')" class="text-danger">
+                ingrese un dominio
+            </p>
+        </div>
+    
+            
+ 
+        <label for="">Contraseña</label>
+        <div class="password">
+            <input type="password" class="form-control" formControlName="contraseña" [type]="hide ? 'password':'text'">
+            <i class="material-icons" matSuffix (click)="hide = !hide">
+            {{hide ? 'visibility': 'visibility_off'}}
+        </i>
+        </div>
+        <div *ngIf="form.get('contraseña')?.errors && form.get('contraseña')?.touched">
+            <p *ngIf="form.get('contraseña')?.hasError('required')" class="text-danger">
+                Por favor ingrese su contraseña
+            </p>
+            <p *ngIf="form.get('contraseña')?.hasError('minlength')" class="text-danger">
+                minimo de 8 caracteres 
+            </p>
+            <p *ngIf="form.get('contraseña')?.hasError('maxlength')"class="text-danger">
+                Maximo de 16 caracteres
+            </p>
+            <p *ngIf="form.get('contraseña')?.hasError('pattern')" class="text-danger">
+                Ingrese letras en minuscula, mayuscula y numeros
+            </p>
+        </div>
+
+        <label for="">Repita su contraseña</label>
+        <div class="password">
+            <input type="password" class="form-control" formControlName="contraseña2" [type]="hide ? 'password':'text'">
+            <i class="material-icons" matSuffix (click)="hide = !hide">
+            {{hide ? 'visibility': 'visibility_off'}}
+        </i>
+        </div>
+        <div *ngIf="form.get('contraseña')?.errors && form.get('contraseña')?.touched">
+            <p *ngIf="form.get('contraseña')?.hasError('required')" class="text-danger">
+                Por favor ingrese su contraseña
+            </p>
+            <p *ngIf="form.get('contraseña')?.hasError('minlength')" class="text-danger">
+                minimo de 8 caracteres 
+            </p>
+            <p *ngIf="form.get('contraseña')?.hasError('maxlength')"class="text-danger">
+                Maximo de 16 caracteres
+            </p>
+            <p *ngIf="form.get('contraseña')?.hasError('pattern')" class="text-danger">
+                Ingrese letras en minuscula, mayuscula y numeros
+            </p>
+        </div>
+
+        
+        <label for="">Provincia</label>
+        <select name="" id="" class="form-control" formControlName="provincia">
+            <option value="" disabled selected>Seleccione</option>
+            <option value="1">Catamarca</option>
+            <option value="2">La Rioja</option>
+            <option value="3">Cordoba</option>
+            <option value="4">Tucuman</option>
+            <option value="5">Santiago del Estero</option>
+            <option value="6">Jujuy</option>
+        </select>
+        <div *ngIf="form.get('provincia')?.errors && form.get('provincia')?.touched">
+            <p *ngIf="form.get('provincia')?.hasError('required')" class="text-danger">
+                Por favor ingrese su provincia
+            </p>
+        </div>
+
+        <label for="">Genero</label>
+        <select name="" id="" class="form-control" formControlName="genero">
+            <option value="" disabled selected>Seleccione</option>
+            <option value="1">Hombre</option>
+            <option value="2">Mujer</option>
+            <option value="3">Otro</option>
+        </select>
+        <div *ngIf="form.get('genero')?.errors && form.get('genero')?.touched">
+            <p *ngIf="form.get('genero')?.hasError('required')" class="text-danger">
+                Por favor ingrese su genero
+            </p>
+        </div>
 
 
-                <input type="password" placeholder="Contraseña" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-            </div>
-            <div class="mb-3">
-
-
-                <input type="password" placeholder="Repetir contraseña" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-            </div>
-            <div class="mb-3">
-
-                <select name="" id="" class="form-select">
-                    <option value disabled selected>Pais</option>
-                    <option value="1">Argentina</option>
-                    <option value="2">Chile</option>
-                    <option value="3">Venezuela</option>
-                    <option value="4">Uruguay</option>
-                    <option value="5">Paraguay</option>
-                </select>
-
-            </div>
-            <div class="mb-3">
-
-                <select name="" id="" class="form-select">
-                    <option value="" disabled selected>Provincia</option>
-                    <option value="1">Catamarca</option>
-                    <option value="2">La Rioja</option>
-                    <option value="3">Tucuman</option>
-                    <option value="4">Cordoba</option>
-                    <option value="5">Santiago del Estero</option>
-                </select>
-
-            </div>
-            <div class="mb-3 input-group">
-
-
-                <span class="input-group-text" id="basic-addon2">Fecha de Nacimiento</span>
-                <input type="date" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-
-            </div>
-            <div class="mb-3">
-
-
-                <select name="" id="" class="form-select">
-                    <option value="" disabled selected>Genero</option>
-                    <option value="1">Masculino</option>
-                    <option value="2">Femenino</option>
-                    <option value="3">Otro</option>
-                </select>
-            </div>
-
-            <div class="boton-registro">
-                <button type="submit" class="btn btn-primary">Registrarme</button>
-            </div>
-            <br>
-
-        </form>
-
-    </div>
+        <div class="boton">
+            <button class="btn btn-success boton-enviar" type="submit" [disabled]="!form.valid">Enviar</button>
+        </div>
+    </form>
 </div>
