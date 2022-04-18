@@ -30,6 +30,7 @@ import { PagesModule } from './pages/pages.module';
 ///formularios
 import {  FormsModule} from '@angular/forms';
 import { FooterComponent} from  './components/footer/footer.component'
+import {  RegistrosComponent} from './pages/registros/registros.component'
 
 
 
@@ -46,7 +47,8 @@ import { FooterComponent} from  './components/footer/footer.component'
     AyudaComponent,
     HeaderComponent,
     SidenavListComponent,
-    FooterComponent
+    FooterComponent,
+    RegistrosComponent
 
   ],
   imports: [

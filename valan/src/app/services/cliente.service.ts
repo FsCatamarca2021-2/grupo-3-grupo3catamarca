@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ForoModel } from 'src/app/models/foro.models';
 import { Respons } from '../models/clientes-response';
-import {map}  from 'rxjs/operators'
+import {map, delay}  from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,8 @@ private url=''
    }
    getAll():Observable<any>{
     
-    return this.http.get<any>('/cliente/ObtenerClientes')
+    return this.http.get<any>('/soporte/ObtenerClientes')
+    
     
 
   }
@@ -28,7 +29,7 @@ private url=''
   //crear
 
   crearComentario(oCliente:Respons){
-    return this.http.post('/cliente/guardarcliente',oCliente)
+    return this.http.post('/soporte/guardarcliente',oCliente)
                 .pipe(
                   map ((resp:any)=>{
                     oCliente.idCliente=resp.name;

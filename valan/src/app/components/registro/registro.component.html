@@ -1,10 +1,10 @@
-<div class="contenedor">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+<div class="contenedor fast fadeIn animated">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <h1>Registro</h1>
 
 
         <label for="">Nombre</label>
-        <input type="text" class="form-control"  formControlName="nombre">
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="usuario.nombre" formControlName="nombre">
         <div *ngIf="form.get('nombre')?.errors && form.get('nombre')?.touched">
             <p *ngIf="form.get('nombre')?.hasError('required')" class="text-danger">
                 Por favor ingrese su nombre
@@ -15,7 +15,7 @@
         </div>
 
         <label for="">Apellido</label>
-        <input type="text" class="form-control" formControlName="apellido">
+        <input type="text" class="form-control" name="apellido" [(ngModel)]="usuario.apellido" formControlName="apellido">
         <div *ngIf="form.get('apellido')?.errors && form.get('apellido')?.touched">
             <p *ngIf="form.get('apellido')?.hasError('required')" class="text-danger">
                 Por favor ingrese su apellido
@@ -26,7 +26,7 @@
         </div>
 
         <label for="">DNI</label>
-        <input type="number" class="form-control" formControlName="dni">
+        <input type="number" class="form-control" formControlName="dni" name="dni" [(ngModel)]="usuario.dni">
         <div *ngIf="form.get('dni')?.errors && form.get('dni')?.touched">
             <p *ngIf="form.get('dni')?.hasError('required')" class="text-danger">
                 Por favor ingrese su DNI
@@ -34,7 +34,7 @@
         </div>
 
         <label for="">Fecha de Nacimiento</label>
-        <input type="date" class="form-control" formControlName="fechaNacimiento">
+        <input type="date" class="form-control" formControlName="fechaNacimiento" name="nacimiento" [(ngModel)]="usuario.nacimiento">
         <div *ngIf="form.get('fechaNacimiento')?.errors && form.get('fechaNacimiento')?.touched">
             <p *ngIf="form.get('fechaNacimiento')?.hasError('required')" class="text-danger">
                 Por favor ingrese su fecha de nacimiento
@@ -42,7 +42,7 @@
         </div>
 
         <label for="">Celular</label>
-        <input type="number" class="form-control" formControlName="celular">
+        <input type="number" class="form-control" formControlName="celular" name="celular" [(ngModel)]="usuario.celular">
         <div *ngIf="form.get('celular')?.errors && form.get('celular')?.touched">
             <p *ngIf="form.get('celular')?.hasError('required')" class="text-danger">
                 Por favor ingrese su celular
@@ -50,7 +50,7 @@
         </div>
 
         <label for="">Direccion</label>
-        <input type="text" class="form-control" formControlName="direccion">
+        <input type="text" class="form-control" formControlName="direccion" name="direccion" [(ngModel)]="usuario.direccion">
         <div *ngIf="form.get('direccion')?.errors && form.get('direccion')?.touched">
             <p *ngIf="form.get('direccion')?.hasError('required')" class="text-danger">
                 Por favor ingrese su direccion
@@ -58,7 +58,7 @@
         </div>
 
         <label for="">Numeracion</label>
-        <input type="number" class="form-control" formControlName="numeracion">
+        <input type="number" class="form-control" formControlName="numeracion" name="numeracion" [(ngModel)]="usuario.numeracion">
         <div *ngIf="form.get('numeracion')?.errors && form.get('numeracion')?.touched">
             <p *ngIf="form.get('numeracion')?.hasError('required')" class="text-danger">
                 Por favor ingrese la numeracion de su lugar de residencia
@@ -66,13 +66,13 @@
         </div>
 
         <label for="">Departamento</label>
-        <input type="text" class="form-control" formControlName="departamento">
+        <input type="text" class="form-control" formControlName="departamento" name="departamento" [(ngModel)]="usuario.departamento">
 
         <label for="">Piso</label>
-        <input type="text" class="form-control" formControlName="piso">
+        <input type="text" class="form-control" formControlName="piso" name="piso" [(ngModel)]="usuario.piso">
 
         <label for="">Barrio</label>
-        <input type="text" class="form-control" formControlName="barrio">
+        <input type="text" class="form-control" formControlName="barrio" name="barrio" [(ngModel)]="usuario.barrio">
         <div *ngIf="form.get('barrio')?.errors && form.get('barrio')?.touched">
             <p *ngIf="form.get('barrio')?.hasError('required')" class="text-danger">
                 Por favor ingrese su barrio
@@ -80,7 +80,7 @@
         </div>
 
         <label for="">Correo</label>
-        <input type="email" class="form-control" formControlName="correo">
+        <input type="email" name="email" required email [(ngModel)]="usuario.email" class="form-control" formControlName="correo">
         <div *ngIf="form.get('correo')?.errors && form.get('correo')?.touched">
             <p *ngIf="form.get('correo')?.hasError('required')" class="text-danger">
                 Por favor ingrese su correo
@@ -92,7 +92,8 @@
         </div>
 
         <label for="">Contraseña</label>
-        <input type="password" class="form-control" formControlName="contraseña">
+
+        <input type="password" required minlength="6" name="password" [(ngModel)]="usuario.password" class="form-control" formControlName="contraseña">
         <div *ngIf="form.get('contraseña')?.errors && form.get('contraseña')?.touched">
             <p *ngIf="form.get('contraseña')?.hasError('required')" class="text-danger">
                 Por favor ingrese su contraseña
@@ -104,7 +105,7 @@
 
 
         <label for="">Edad</label>
-        <input type="number" class="form-control" formControlName="edad">
+        <input type="number" class="form-control" formControlName="edad" name="edad" [(ngModel)]="usuario.edad">
         <div *ngIf="form.get('edad')?.errors && form.get('edad')?.touched">
             <p *ngIf="form.get('edad')?.hasError('required')" class="text-danger">
                 Por favor ingrese su edad
@@ -120,7 +121,7 @@
 
 
         <label for="">Provincia</label>
-        <select name="" id="" class="form-control" formControlName="provincia">
+        <select name="provincia" id="" class="form-control" name="provincia" [(ngModel)]="usuario.provincia">
             <option value="" disabled selected>Seleccione</option>
             <option value="1">Catamarca</option>
             <option value="2">La Rioja</option>
@@ -136,7 +137,7 @@
         </div>
 
         <label for="">Genero</label>
-        <select name="" id="" class="form-control" formControlName="genero">
+        <select name="genero" id="" class="form-control" name="genero" [(ngModel)]="usuario.genero">
             <option value="" disabled selected>Seleccione</option>
             <option value="1">Hombre</option>
             <option value="2">Mujer</option>
@@ -150,7 +151,64 @@
 
 
         <div class="boton">
-            <button class="btn btn-success boton-enviar" type="submit" [disabled]="!form.valid">Enviar</button>
+            <button class="btn btn-success boton-enviar" type="submit">Enviar</button>
         </div>
     </form>
 </div>
+
+
+
+<!-- <div class="limiter fadeInRight animated">
+    <div class="container-login100">
+        <div class="wrap-login100 p-t-50 p-b-90">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="login100-form validate-form flex-sb flex-w">
+
+                <span class="login100-form-title p-b-51">
+                    Crear nueva cuenta
+                </span>
+
+                <span *ngIf="f.submitted && f.controls['email'].errors" class="text-danger animated fadeIn">El correo es obligatorio</span>
+                <div class="wrap-input100 m-b-16">
+                    <input class="input100" type="email" name="email" required email [(ngModel)]="usuario.email" placeholder="Email">
+
+                    <span class="focus-input100"></span>
+                </div>
+
+                <span *ngIf="f.submitted && f.controls['nombre'].errors" class="text-danger animated fadeIn">El nombre es obligatorio</span>
+                <div class="wrap-input100 m-b-16">
+                    <input class="input100" type="text" required minlength="2" name="nombre" [(ngModel)]="usuario.nombre" placeholder="Nombre y apellidos">
+
+                    <span class="focus-input100"></span>
+                </div>
+
+                <span *ngIf="f.submitted && f.controls['password'].errors" class="text-danger animated fadeIn">al menos 6 caracteres</span>
+                <div class="wrap-input100 m-b-16">
+                    <input class="input100" type="password" required minlength="6" name="password" [(ngModel)]="usuario.password" placeholder="Password">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="flex-sb-m w-full p-t-3 p-b-24">
+                    <div class="contact100-form-checkbox">
+                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                        <label class="label-checkbox100" for="ckb1">
+                            Recordar mi usuario
+                        </label>
+                    </div>
+
+                    <div>
+                        <a routerLink="/sesion" class="txt1">
+                            ¿Ya tienes cuenta? / Ingresar
+                        </a>
+                    </div>
+                </div>
+
+                <div class="container-login100-form-btn m-t-17">
+                    <button class="login100-form-btn" type="submit">
+                        Crear cuenta
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div> -->

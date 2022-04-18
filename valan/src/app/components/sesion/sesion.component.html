@@ -1,49 +1,40 @@
-<div class="raios">
+<div class="raios   fadeInLeft animated">
 
     <div class="login">
         <img src="../assets/img/logoLogin.png" class="card-img-top imgLogo" alt="...">
         <div class="contenedorSesion">
             <h5 class="card-title TituloSesion ">Login</h5>
 
-            <form [formGroup]="formLog">
+            <form (ngSubmit)="login(f)" #f="ngForm">
                 <div class="BordeLogin">
                     <div class="bor mb-3">
-                        <span class="icon" id="basic-addon1"><i class="fa-solid fa-user-astronaut icolog"></i></span>
-                        <input type="text" class="form-control bor" formControlName="input1" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1" required maxlength="20" minlength="5"/>
-                        <div *ngIf="formLog.get('input1')?.errors && formLog.get('input1')?.touched">
-                            
-                            <p *ngIf="formLog.get('input1')?.hasError('required')" class="text-danger">Completar Campo</p>
-                            <p *ngIf="formLog.get('input1')?.hasError('minlength')" class="text-danger">7 números como mínimo</p>
-                            <p *ngIf="formLog.get('input1')?.hasError('maxlength')" class="text-danger">8 números como máximo</p>
-                        </div>
+                        <span *ngIf="f.submitted && f.controls['email'].errors" class="text-danger animated fadeIn">El correo es obligatorio</span>
+                        <span class="icon" id="basic-addon1"><img src="../assets/img/loginUsuario.png" width="30" m  alt=""></span>
+                        <input type="text" required email name="email" [(ngModel)]="usuario.email" class="form-control bor" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                     <div class="bor mb-3">
-                        <i class="fa-solid fa-key icolog"></i>
-                        <input type="password" class="form-control bor" formControlName="input2" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1" required minlength="8">
-                        <div *ngIf="formLog.get('input2')?.errors && formLog.get('contraseña')?.touched">
-                            <p *ngIf="formLog.get('input2')?.hasError('required')" class="text-danger">
-                                Por favor ingrese su contraseña
-                            </p>
-                            
-                        </div>
+                        <span *ngIf="f.submitted && f.controls['password'].errors" class="text-danger animated fadeIn">Al menos 6 letras</span>
+                        <span class="icon" id="basic-addon1"><img src="../assets/img/loginContraseña.png" width="30"  alt=""></span>
+                        <input required minlength="6" name="password" [(ngModel)]="usuario.password" type="password" class="form-control bor" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1">
                     </div>
 
                 </div>
                 <div class="mb-3 form-check OlvContr">
-                    <div class="cont1 text">
+
+                    <div class="cont1">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Recordar mi Correo</label>
                     </div>
                     <div class="cont2">
-                        <a href="#" class="link">Olvidé mi contraseña</a>
+                        <a routerLink="/registro" class="link">Olvidé mi contraseña</a>
                     </div>
                 </div>
                 <div class="boton">
-                    <button type="submit" class="botonRe botonR">Ingresar</button>
+                    <button type="submit" class="btn btn-primary color-boton">Ingresar</button>
                     <br>
                 </div>
-                <div class="registro text">
-                    <p>¿Aún no tienes cuenta? <a routerLink="registro" class="registrolink">Registrarme</a> </p>
+                <div class="registro">
+                    <p>¿Aún no tienes cuenta? <a routerLink="/registro" class="registrolink">Registrarme</a> </p>
                 </div>
 
 
