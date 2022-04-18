@@ -107,6 +107,9 @@ form = this.formB.group({
   get edad() {return this.form.get('edad');}
   get provincia() {return this.form.get('provincia');}
   get genero() {return this.form.get('genero');}
+
+  hide = true;
+
   
 }
 

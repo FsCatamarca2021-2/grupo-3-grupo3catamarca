@@ -1,18 +1,19 @@
-.transferencias{
-    width: 450px;
+.PagodeServicio{
+    width: 400px;
     margin: 0 auto;
     text-align: center;
 }
-.icenteias{
+.PagodeServicio input{
+    width: 400px;
+}
+.title{
     text-align: center;
     margin-bottom: 20px;
     font-size: 30px;
     font-family: 'Bebas Neue', cursive;
 }
-.margen{
-    margin: 12px 0;
-}
-.btnEnviar{
+
+.btnPa{
     width: 160px;
     font-size: 16px;
     font-weight: 600;
@@ -30,17 +31,17 @@
   transition: all .4s ease-in-out;
 
 }
-.btnEnviar:hover {
+.btnPa:hover {
 background-position: 100% 0;
   -moz-transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
 }
-.btnEnviar:focus {
+.btnPa:focus {
     outline: none;
 }
-.btnEnviar.btnE{
+.btnPa.btnP{
     background-image: linear-gradient(
     to right,
     #25aae1,
