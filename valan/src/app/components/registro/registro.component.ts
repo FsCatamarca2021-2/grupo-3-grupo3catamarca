@@ -59,7 +59,7 @@ form = this.formB.group({
     });
     Swal.showLoading();
     
-    this.router.navigateByUrl('/menu');
+    
   
     this.auth.nuevoUsuario(this.usuario)
         .subscribe (resp =>{

@@ -31,9 +31,25 @@ private url=''
 
   nuevoUsuario (usuario:UsuarioModel){
    const authData ={
-   email:usuario.email,
-   password:usuario.password,
-   nombre:usuario.nombre,
+     nombre:usuario.nombre,
+     apellido:usuario.apellido,
+     dni:usuario.dni,
+     nacimiento:usuario.nacimiento,
+     celular:usuario.celular,
+     direccion:usuario.direccion,
+     numeracion:usuario.numeracion,
+     departamento:usuario.departamento,
+     piso:usuario.piso,
+     barrio:usuario.barrio,
+     email:usuario.email,
+     password:usuario.password,
+     edad:usuario.edad,
+     provincia:usuario.provincia,
+     genero:usuario.genero,
+
+
+   
+    
    };
   return this.http.post(`${this.url}/usuario/GuardarUsuario`,authData);
   };
