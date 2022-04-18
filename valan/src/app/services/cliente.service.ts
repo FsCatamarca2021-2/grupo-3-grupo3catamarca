@@ -26,6 +26,10 @@ private url=''
 
   }
 
+  mostrarClientesMonto():Observable<any>{
+    return this.http.get<any>('/usuario/ObtenerUsuarios')
+  }
+
   //crear
 
   crearComentario(oCliente:Respons){

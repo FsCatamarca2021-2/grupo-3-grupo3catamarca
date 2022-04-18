@@ -1,5 +1,5 @@
 export class UsuarioModel {
-
+id_usuario:string;
 apellido:string;
 dni:string;
 nacimiento:string;
@@ -19,7 +19,7 @@ genero:string;
     nombre:string;
 
     constructor() {
-        
+        this.id_usuario="";
         this.email="";
         this.password="";
         this.nombre="";

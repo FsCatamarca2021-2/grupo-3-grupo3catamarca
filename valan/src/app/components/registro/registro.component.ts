@@ -54,12 +54,12 @@ form = this.formB.group({
       timer:2000,
      
       text:'Espere por favor...',
-      title:'la cuenta fué creada con éxito', 
+      title:'la cuenta fué creada con éxito'
       
     });
     Swal.showLoading();
     
-    
+   
   
     this.auth.nuevoUsuario(this.usuario)
         .subscribe (resp =>{
@@ -107,9 +107,5 @@ form = this.formB.group({
   get edad() {return this.form.get('edad');}
   get provincia() {return this.form.get('provincia');}
   get genero() {return this.form.get('genero');}
-
-  hide = true;
-
   
 }
-

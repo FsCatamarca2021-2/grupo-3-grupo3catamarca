@@ -29,8 +29,9 @@ import { SidenavListComponent } from './components/shared/sidenav-list/sidenav-l
 import { PagesModule } from './pages/pages.module';
 ///formularios
 import {  FormsModule} from '@angular/forms';
-import { FooterComponent} from  './components/footer/footer.component'
-import {  RegistrosComponent} from './pages/registros/registros.component'
+import { FooterComponent} from  './components/footer/footer.component';
+import {  RegistrosComponent} from './pages/registros/registros.component';
+
 
 
 
@@ -48,7 +49,8 @@ import {  RegistrosComponent} from './pages/registros/registros.component'
     HeaderComponent,
     SidenavListComponent,
     FooterComponent,
-    RegistrosComponent
+    RegistrosComponent,
+    
 
   ],
   imports: [

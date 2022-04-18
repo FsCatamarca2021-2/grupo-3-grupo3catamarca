@@ -51,7 +51,7 @@ export class SesionComponent implements OnInit {
             Swal.fire({
               title:'Error al autenticar',
               
-              text:err.error
+              text:err.error.text
             });
           });
       
