@@ -1,7 +1,15 @@
-{
+/*{
     "/cliente/": {
         "target": "http://localhost:5086",
         "secure": false,
         "logLevel": "debug"
     }
+}
+*/
+//host abi
+{
+"/cliente/": {
+    "target": "https://localhost:7281/",
+    "secure": false,
+    "logLevel": "debug"
 }

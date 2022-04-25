@@ -29,10 +29,21 @@ export class RegistroComponent implements OnInit {
   constructor(private formB: FormBuilder) {
   }
 
-  ngOnInit(): void {}
+  this.oUsuario.valid
+  this.oUsuario.invalid
   
-  RegistroNuevo(){
-    
+  RegistroNuevo(oUsuario:Event){
+    if(this.oUsuario.valid){
+      const value = this.oUsuario.value;
+      console.log('prueba1');
+      console.log(value)
+      this.userService.crearCliente(this.oUsuario.value)
+      .subscribe(resp => {
+        console.log(resp);
+        console.log('prueba2');
+        this.Router.navigationByUrl('sesion');
+      })
+    }   
   }
 
   get nombre() {return this.form.get('nombre');}
@@ -50,5 +61,7 @@ export class RegistroComponent implements OnInit {
   get genero() {return this.form.get('genero');}
 
   hide = true;
+
+
 }
 
