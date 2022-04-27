@@ -1,0 +1,64 @@
+:root {
+    --primary: #111b54;
+    --light: #ffffff;
+    --grey: #efefef;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Muly', sans-serif;
+    font-weight: 300;
+    color: var(--primary);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+#sidebar-conteiner {
+    min-height: 100vh;
+}
+
+#sidebar-conteiner {
+    padding: .875rem 1.25rem;
+}
+
+#sidebar-conteiner {
+    width: 18rem;
+}
+
+.menu {
+    margin: 0 auto;
+}
+
+
+/* Sidebar */
+
+:root {
+    --primary: #111B54;
+    --light: #ffffff;
+    --grey: #efefef;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Muli', 'sans-serif';
+    font-weight: 300;
+    color: var(--primary);
+}
+
+#sidebar-container {
+    min-height: 100vh;
+}
+
+#sidebar-container .logo {
+    padding: .875rem 1.25rem;
+}
+
+#sidebar-container .menu {
+    width: 18rem;
+}

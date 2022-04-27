@@ -1,10 +1,13 @@
 <div class="transferencias">
-    <h1 class="icenteias">Transferencias</h1>
-    <form action="">
-        <input type="number" class="form-control margen" placeholder="USUARIO">
-        <input type="text" class="form-control margen" placeholder="ALIAS">
+    <h1 class="icenteias">Enviar dinero</h1>
+    <form action="" (ngSubmit)="trasferir(f)" #f="ngForm">
+        <select class="form-select" aria-label="Default select example " name="agendaClient" ngModel required>
+            <option selected>Transferencia uuario agendado</option>
+            <option  *ngFor="let usuario of agenda" name="id_usuario" [value]="usuarios.id_Usuario">{{usuario.nombre}}</option>
+            
+          </select> <input type="text" class="form-control margen" [(ngModel)]="usuarios.saldo" name="saldo" placeholder="Monto a transferir">
+        <button type="submit" class="btnEnviar btnE">Tansferir</button>
     </form>
-    <a href="#"> 
-        <button class="btnEnviar btnE">Tansferir</button>
+    <a>
     </a>
 </div>

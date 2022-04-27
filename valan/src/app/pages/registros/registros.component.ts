@@ -52,12 +52,12 @@ export class RegistrosComponent implements OnInit {
     
     // servicio comentario
         
-    this.comentarioService.getComentario()
-        .subscribe (resp=>{
-          console.log(resp);
-          this.firebase=resp;
+    // this.comentarioService.getComentario()
+    //     .subscribe (resp=>{
+    //       console.log(resp);
+    //       this.firebase=resp;
          
-        });
+    //     });
         
     }
   }

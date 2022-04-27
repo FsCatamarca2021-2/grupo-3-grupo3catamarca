@@ -31,6 +31,10 @@ import { PagesModule } from './pages/pages.module';
 import {  FormsModule} from '@angular/forms';
 import { FooterComponent} from  './components/footer/footer.component';
 import {  RegistrosComponent} from './pages/registros/registros.component';
+import { MenuPrincipalComponent } from './components/menuPrincipal/menuPrincipal.component';
+import { ControlComponent } from './components/control/control.component';
+import { TransferenciasComponent } from './components/transferencias/transferencias.component';
+import { PagodeServiciosComponent } from './components/pagode-servicios/pagode-servicios.component';
 
 
 
@@ -50,6 +54,10 @@ import {  RegistrosComponent} from './pages/registros/registros.component';
     SidenavListComponent,
     FooterComponent,
     RegistrosComponent,
+    MenuPrincipalComponent,
+    ControlComponent,
+    TransferenciasComponent,
+    PagodeServiciosComponent
     
 
   ],

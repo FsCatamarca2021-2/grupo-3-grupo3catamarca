@@ -1,0 +1,54 @@
+<h1>
+    Listado de Usuarios</h1>
+<hr>
+
+
+<div class="row">
+    <div class="col text-right">
+        <button routerLink="/menu/dashboard" class="btn btn-primary">
+      <i class="fa fa-plus"></i>
+      Dashboard
+    </button>
+    </div>
+</div>
+
+
+<table class="table mt-3 animated fadeIn faster animated fadeIn faster">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre y Apellido</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Password</th>
+            <th scope="col">Herramientas</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cliente of clientes, let i =index ">
+            <th scope="row">{{ cliente.id_Usuario}}</th>
+            <td>{{cliente.nombre}}</td>
+            <td>{{cliente.email}}</td>
+            <td>{{cliente.password}}</td>
+
+            <td>
+
+                <button class="btn btn-info mr-1">
+          <i class="fa fa-pen"></i>
+        </button>
+
+                <button class="btn btn-danger" (click)="borrarUsuario(cliente, i)">
+          <i class="fa fa-trash"></i>
+        </button>
+
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<!-- [routerLink]="['/heroe', heroe.id ]" -->
+
+
+<!-- (click)="borrarHeroe( heroe, i ) " -->

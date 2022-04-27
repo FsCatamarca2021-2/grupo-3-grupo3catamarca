@@ -11,6 +11,7 @@ import { RegistrosComponent } from './pages/registros/registros.component';
 import { TransferenciasComponent } from './components/transferencias/transferencias.component';
 import { InversionesComponent } from './components/inversiones/inversiones.component';
 import { PagodeServiciosComponent } from './components/pagode-servicios/pagode-servicios.component';
+import { ControlComponent } from './components/control/control.component';
 
 
 
@@ -21,13 +22,14 @@ export const ROUTES: Routes= [
     {path:'sesion', component: SesionComponent},
     {path:'registro',component: RegistroComponent },
     {path:'somos',component: SomosComponent },
-    {path:'menu',component: MenuPrincipalComponent  },
+    {path:'menu/:id',component: MenuPrincipalComponent  },
     {path:'ayuda',component: AyudaComponent },
     {path:'foro/:id',component: ForoComponent },
     {path:'registros',component: RegistrosComponent },
     {path: 'transferencias', component: TransferenciasComponent},
     {path: 'inversiones', component: InversionesComponent},
     {path: 'pagodeServicios', component: PagodeServiciosComponent},
+    {path: 'control', component: ControlComponent},
 
     
 

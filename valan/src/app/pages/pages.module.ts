@@ -6,11 +6,12 @@ import { Portada2Component } from './portada2/portada2.component';
 import { Portada3Component } from './portada3/portada3.component';
 import { RegistroComponent } from './registro/registro.component';
 import { RegistrosComponent } from './registros/registros.component';
-import {MenuPrincipalComponent} from '../components/menuPrincipal/menuPrincipal.component'
+//import {MenuPrincipalComponent} from '../components/menuPrincipal/menuPrincipal.component'
 import { RouterModule } from '@angular/router';
 //formulario
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -29,7 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     Portada2Component,
     Portada3Component,
     RegistroComponent,
-    MenuPrincipalComponent
+  //  MenuPrincipalComponent
     
   ],
   exports:[

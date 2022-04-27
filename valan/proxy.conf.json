@@ -3,5 +3,25 @@
         "target": "http://localhost:5086",
         "secure": false,
         "logLevel": "debug"
+
+    },
+    "/soporte/": {
+        "target": "http://localhost:5086",
+        "secure": false,
+        "logLevel": "debug"
+
+    },
+    "/cliente/": {
+        "target": "http://localhost:5086",
+        "secure": false,
+        "logLevel": "debug"
+
+    },
+
+    "/cuenta/": {
+        "target": "http://localhost:5086",
+        "secure": false,
+        "logLevel": "debug"
+
     }
 }
